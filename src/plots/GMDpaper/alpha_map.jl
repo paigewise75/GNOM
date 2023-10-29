@@ -97,7 +97,7 @@ end
     topscene = Scene(fig.scene)
     Label(topscene, bbox = ax.scene.px_area, panellabels[2], textsize=20, halign=:left, valign=:bottom, padding=(10,0,5,0), font=labelfont, color=:black)
     nothing
-end
+#end
 fig = Figure(resolution = (700, 1000), backgroundcolor=:white)
 plot_alpha_map!(fig)
 trim!(fig.layout)
