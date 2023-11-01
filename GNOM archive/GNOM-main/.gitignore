@@ -1,0 +1,12 @@
+*html
+*mat
+*bson
+*svg
+*png
+*.DS_Store
+output/
+cluster_output/
+data/
+.vscode/settings.json
+
+src/plots/private/*

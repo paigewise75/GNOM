@@ -1,0 +1,47 @@
+TY  - DATA
+AU  - GEOTRACES Intermediate Data Product Group
+TI  - The GEOTRACES Intermediate Data Product 2021 (IDP2021).
+PY  - 2021
+DA  - 2021/11/17/08:25
+AB  - The GEOTRACES Intermediate Data Product 2021 (IDP2021) is the third release of publicly available data products from the international GEOTRACES programme, and contains trace element and isotope (TEI) data reported before the end of 2020. The TEI data in the IDP2021 are quality controlled by careful assessment of intercalibration results and multi-laboratory data comparisons at crossover stations. The IDP2021 represents a major new data release. Compared to IDP2017, IDP2021 improves data coverage significantly in all ocean basins, especially in the Arctic, the Indian Ocean and the Pacific. Overall, the new data product contains more than twice the number of cruises, stations and actual data values. IDP2021 also contains data for a large suite of biogeochemical parameters, as well as aerosol and rain data characterising atmospheric TEI sources and, for the first time, cryosphere TEI data from the Arctic. IDP2021 is comprised of five packages of digital data: (1) seawater discrete water sample data including TEIs as well as standard hydrographic parameters, (2) aerosol data, (3) precipitation data, (4) cryosphere data and (5) seawater sensor data. The digital data are available in ASCII, netCDF, and Ocean Data View collection formats, with data quality flags and 1-&sigma; data error values where available. Metadata concerning data originators, analytical methods and original publications related to the data are linked in an easily accessible way. The GEOTRACES IDP2021 is released under the Creative Commons By Attribution (CC-BY) Licence 4.0 as described in the <a  href="https://www.bodc.ac.uk/data/documents/nodb/594352/">Fair Use Agreement</a>.
+KW  - Arctic Ocean
+KW  - Atlantic Ocean
+KW  - Indian Ocean
+KW  - Pacific Ocean
+KW  - Southern Ocean
+KW  - World
+KW  - Atmospheric particulates
+KW  - Chlorofluorocarbon concentrations in the water column
+KW  - Concentration of inorganic halogens in the atmosphere
+KW  - Concentration of inorganic halogens in water bodies
+KW  - Concentration of silicon species in the water column
+KW  - Concentration of suspended particulate material in the water column
+KW  - Dissolved metal concentrations in the water column
+KW  - Dissolved noble gas concentration parameters in the water column
+KW  - Dissolved organic carbon concentration in the water column
+KW  - Dissolved oxygen parameters in the water column
+KW  - Dissolved total and organic nitrogen concentrations in the water column
+KW  - Inorganic phosphorus species concentrations in the atmosphere
+KW  - Metal concentrations in the atmosphere
+KW  - Metal ligand parameters in the water column
+KW  - Nitrate concentration parameters in the water column
+KW  - Nitrite concentration parameters in the water column
+KW  - Particulate inorganic carbon concentrations in the water column
+KW  - Particulate metal concentrations in the water column
+KW  - Particulate total and organic carbon concentrations in the water column
+KW  - Particulate total and organic phosphorus concentrations in the water column
+KW  - Phosphate concentration parameters in the water column
+KW  - Precipitation chemistry
+KW  - Radioactivity in water bodies
+KW  - Salinity of the water column
+KW  - Silicate concentration parameters in the water column
+KW  - Stable isotopes in ice and snow
+KW  - Stable isotopes in the atmosphere
+KW  - Stable isotopes in water bodies
+KW  - Temperature of the water column
+KW  - Total metal concentrations in water bodies
+KW  - Water body released tracers
+DO  - doi:10.5285/cf2d9ba9-d51d-3b7c-e053-8486abc0f5fd
+PB  - NERC EDS British Oceanographic Data Centre NOC
+LA  - en
+ER  - 

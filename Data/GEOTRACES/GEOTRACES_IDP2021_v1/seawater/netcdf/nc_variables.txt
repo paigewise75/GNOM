@@ -1,0 +1,602 @@
+nc Variable	Variable	Units	Description
+
+metavar1	Cruise		
+metavar2	Station		
+metavar3	Type		
+longitude	Longitude	degrees_east	
+latitude	Latitude	degrees_north	
+metavar4	Bot. Depth	m	Bottom depth
+metavar5	Operator's Cruise Name		
+metavar6	Ship Name		
+metavar7	Period		
+metavar8	Chief Scientist		
+metavar9	GEOTRACES Scientist		
+metavar10	Cruise Aliases		
+metavar11	Cruise Information Link		
+metavar12	BODC Cruise Number		
+date_time	Decimal Gregorian Days of the station	days since 2006-01-01 00:00:00 UTC	Relative Gregorian Days with decimal part
+			
+var1	CTDPRS_T_VALUE_SENSOR	dbar	Pressure from CTD sensor
+var2	DEPTH	m	Depth below sea surface calculated from pressure
+var3	Rosette Bottle Number		Bottle number on the rosette
+var4	GEOTRACES Sample ID		GEOTRACES sample id
+var5	Bottle Flag		Quality flag for the entire bottle
+var6	Cast Identifier		Cast identifier as string
+var7	Sampling Device		Sampling device descriptor
+var8	BODC Bottle Number		Unique BODC bottle number
+var9	BODC Event Number		Unique BODC event number
+var10	Single-Cell ID		Single-cell identifier
+var11	NCBI_Metagenome_BioSample_Accession		NCBI BioSample accession number for the metagenomic data associated with this bottle number. See: https://www.ncbi.nlm.nih.gov/biosample/
+var12	NCBI_Single-Cell-Genome_BioProject_Accession		NCBI BioProject accession number for single cell genomics data of Bacteria and Archaea. These BioProjet accession numbers encompass single cell genomes from multiple bottles. See the associated Digital Object Identifiers (DOI) for primary references. See https://www.ncbi.nlm.nih.gov/bioproject/
+var13	NCBI_16S-18S-rRNA-gene_BioSample_Accession		NCBI BioSample accession numbers for 16S/18S rRNA gene amplicon sequences (i.e., universal SSU rRNA amplicon V4-V5 DNA for high resolution taxonomy) associated with this bottle number. See: https://www.ncbi.nlm.nih.gov/biosample/
+var14	EMBL_EBI_Metagenome_MGNIFY_Analysis_Accession		Derived functional and taxonomic analysis of the metagenomic data provided by the
+var15	CTDTMP_T_VALUE_SENSOR	deg C	Temperature from CTD sensor in the ITS-90 convention. Metadata must include make and model numbers and recent calibration information.
+var16	CTDSAL_D_CONC_SENSOR	pss-78	Practical salinity from CTD sensor on the PSS-1978 scale. Metadata must include make and model numbers and recent calibration information.
+var17	SALINITY_D_CONC_BOTTLE		Practical salinity from bottle sample on the PSS-1978 scale
+var18	CFC-11_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved CFC-11
+var19	CFC-12_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved CFC-12
+var20	CFC113_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved CFC113
+var21	SF6_D_CONC_BOTTLE	fmol/kg	Concentration of dissolved SF6
+var22	He_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved Helium
+var23	Ne_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved Neon
+var24	Ar_D_CONC_BOTTLE	umol/kg	Concentration of Argon
+var25	Kr_D_CONC_BOTTLE	nmol/kg	Concentration of Krypton
+var26	Xe_D_CONC_BOTTLE	nmol/kg	Concentration of Xenon
+var27	SALINITY_D_CONC_PUMP		Practical salinity on the PSS-1978 scale
+var28	SALINITY_D_CONC_FISH		Practical salinity from a towed fish sample on the PSS-1978 scale
+var29	SALINITY_D_CONC_UWAY		Practical salinity from a seawater sample collected using the ship's underway sampling system on the PSS-1978 scale
+var30	CFC-11_D_CONC_UWAY	pmol/kg	Concentration of dissolved CFC-11
+var31	CFC-12_D_CONC_UWAY	pmol/kg	Concentration of dissolved CFC-12
+var32	CFC113_D_CONC_UWAY	pmol/kg	Concentration of dissolved CFC113
+var33	SF6_D_CONC_UWAY	fmol/kg	Concentration of dissolved SF6
+var34	SALINITY_D_CONC_BOAT_PUMP		Practical salinity on the PSS-1978 scale
+var35	OXYGEN_D_CONC_BOTTLE	umol/kg	Concentration of dissolved oxygen from a bottle sample
+var36	CTDOXY_D_CONC_SENSOR	umol/kg	Concentration of dissolved oxygen from sensor on CTD. Metadata must include make and model numbers and recent calibration information.
+var37	PHOSPHATE_D_CONC_BOTTLE	umol/kg	Concentration of dissolved phosphate, samples may or may not have been filtered
+var38	PHOSPHATE_LL_D_CONC_BOTTLE	umol/kg	Concentration of low-level dissolved phosphate determined using filtered seawater
+var39	SILICATE_D_CONC_BOTTLE	umol/kg	Concentration of dissolved silicate (silicic acid), samples may or may not have been filtered
+var40	NITRATE_D_CONC_BOTTLE	umol/kg	Concentration of dissolved nitrate, samples may or may not have been filtered
+var41	NITRATE_LL_D_CONC_BOTTLE	umol/kg	Concentration of low-level dissolved nitrate  determined by long path length spectrophotometry using filtered seawater
+var42	NITRITE_D_CONC_BOTTLE	umol/kg	Concentration of dissolved nitrite, samples may or may not have been filtered
+var43	NITRITE_LL_D_CONC_BOTTLE	umol/kg	Concentration of low-level dissolved nitrite determined by long path length spectrophotometry using filtered seawater
+var44	NO2+NO3_D_CONC_BOTTLE	umol/kg	Concentration of dissolved nitrate plus nitrite samples may or may not have been filtered
+var45	NO2+NO3_LL_D_CONC_BOTTLE	umol/kg	Concentration of dissolved nitrate plus nitrite  determined by long path length spectrophotometry, samples may or may not have been filtered
+var46	NH4_D_CONC_BOTTLE	umol/kg	Concentration of dissolved ammonium, samples may or may not have been filtered
+var47	TALK_D_CONC_BOTTLE	umol/kg	Concentration of total alkalinity
+var48	DIC_D_CONC_BOTTLE	umol/kg	Concentration of dissolved inorganic carbon
+var49	PH_SWS_BOTTLE		pH, referred to seawater scale
+var50	PH_TOT_BOTTLE		pH, referred to total scale
+var51	DOC_D_CONC_BOTTLE	umol/kg	Concentration of dissolved organic carbon
+var52	TDN_D_CONC_BOTTLE	umol/kg	Total dissolved nitrogen from BOTTLE sample. Metadata must include analytcial method, filter type and pore size.
+var53	PHOSPHATE_D_CONC_PUMP	umol/kg	Concentration of dissolved phosphate in a water sample collected using a bottle attached to a pump, samples may or may not have been filtered
+var54	SILICATE_D_CONC_PUMP	umol/kg	Concentration of dissolved silicate (silicic acid) in a water sample collected using a bottle attached to a pump, samples may or may not have been filtered
+var55	NITRATE_D_CONC_PUMP	umol/kg	Concentration of dissolved nitrate in a water sample collected using a bottle attached to a pump, samples may or may not have been filtered
+var56	NITRITE_D_CONC_PUMP	umol/kg	Concentration of dissolved nitrite in a water sample collected using a bottle attached to a pump, samples may or may not have been filtered
+var57	PHOSPHATE_D_CONC_FISH	umol/kg	Concentration of dissolved phosphate, samples may or may not have been filtered
+var58	PHOSPHATE_LL_D_CONC_FISH	umol/kg	Concentration of low-level dissolved phosphate determined by long path length spectrophotometry using filtered seawater
+var59	SILICATE_D_CONC_FISH	umol/kg	Concentration of dissolved silicate (silicic acid), samples may or may not have been filtered
+var60	NITRATE_D_CONC_FISH	umol/kg	Concentration of dissolved nitrate, samples may or may not have been filtered
+var61	NITRATE_LL_D_CONC_FISH	umol/kg	Concentration of low-level dissolved nitrate determined by long path length spectrophotometry using filtered seawter
+var62	NITRITE_D_CONC_FISH	umol/kg	Concentration of dissolved nitrite, samples may or may not have been filtered
+var63	NITRITE_LL_D_CONC_FISH	umol/kg	Concentration of low-level dissolved nitrite determined by long path length spectrophotometry using filtered seawater
+var64	NO2+NO3_D_CONC_FISH	umol/kg	Concentration of dissolved nitrate plus nitrite, samples may or may not have been filtered
+var65	NO2+NO3_LL_D_CONC_FISH	umol/kg	Concentration of dissolved nitrate plus nitrite  determined by long path length spectrophotometry, samples may or may not have been filtered
+var66	DOC_D_CONC_FISH	umol/kg	Concentration of dissolved organic carbon
+var67	PHOSPHATE_D_CONC_UWAY	umol/kg	Concentration of dissolved phosphate, samples may or may not have been filtered
+var68	SILICATE_D_CONC_UWAY	umol/kg	Concentration of dissolved silicate (silicic acid), samples may or may not have been filtered
+var69	NITRATE_D_CONC_UWAY	umol/kg	Concentration of dissolved nitrate, samples may or may not have been filtered
+var70	NITRITE_D_CONC_UWAY	umol/kg	Concentration of dissolved nitrite, samples may or may not have been filtered
+var71	DOC_D_CONC_UWAY	umol/kg	Concentration of dissolved organic carbon
+var72	NITRATE_D_CONC_BOAT_PUMP	umol/kg	Concentration of dissolved nitrate, samples may or may not have been filtered
+var73	NITRITE_D_CONC_BOAT_PUMP	umol/kg	Concentration of dissolved nitrite, samples may or may not have been filtered
+var74	DIC_13_12_D_DELTA_BOTTLE	per 10^3	Atom ratio of dissolved C isotopes in dissolved inorganic carbon expressed in conventional delta notation referenced to {PDB}
+var75	DIC_14_12_D_DELTA_BOTTLE	per 10^3	DELTA 14C (radiocarbon) of DIC
+var76	He_3_4_D_DELTA_BOTTLE	%	Delta 3He of dissolved He referenced to air
+var77	TRITIUM_D_CONC_BOTTLE	TU	Concentration of tritium
+var78	H2O_2_1_D_DELTA_BOTTLE	per 10^3	Atom ratio of hydrogen isotopes in water expressed in conventional DELTA notation referenced to {VSMOW}
+var79	H2O_18_16_D_DELTA_BOTTLE	per 10^3	Atom ratio of oxygen isotopes in water expressed in conventional DELTA notation referenced to {VSMOW}
+var80	NITRATE_15_14_D_DELTA_BOTTLE	per 10^3	Atom ratio of dissolved N isotopes in nitrate expressed in conventional DELTA notation  referenced to Air N2, samples may or may not have been filtered
+var81	NITRATE_18_16_D_DELTA_BOTTLE	per 10^3	Atom ratio of dissolved O isotopes in nitrate expressed in conventional DELTA notation referenced to {VSMOW}, samples may or may not have been filtered
+var82	SILICATE_30_28_D_DELTA_BOTTLE	per 10^3	Atom ratio of dissolved silicate (silicic acid) Si isotopes expressed in conventional DELTA notation referenced to {NBS28}
+var83	Al_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved Al
+var84	Ba_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved Ba
+var85	Cd_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved Cd
+var86	Co_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Co (after UV oxidation)
+var87	Cu_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved Cu
+var88	Fe_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved Fe
+var89	Fe_II_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved Fe(II)
+var90	Fe_S_CONC_BOTTLE	nmol/kg	Concentration of operationally defined soluble Fe (colloids excluded)
+var91	Ga_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Ga
+var92	Hf_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Hf
+var93	Hg_0_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved elemental Hg (0)
+var94	Hg_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Hg
+var95	Hg_DM_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved DiMethyl Hg
+var96	Hg_Me_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved TotalMethyl Hg
+var97	Hg_MM_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved MonoMethyl Hg
+var98	Hg_T_CONC_BOTTLE	pmol/kg	Concentration of total Hg (unfiltered, dissolved plus total particulate)
+var99	I_D_CONC_BOTTLE	nmol/kg	Concentration of total dissolved Iodine
+var100	I_V_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved Iodate, iodine in the V oxidation state
+var101	Mn_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved Mn, method may include Mn(II) plus Mn(III)
+var102	Mo_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved Mo
+var103	Nb_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Nb
+var104	Ni_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved Ni
+var105	Pb_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Pb
+var106	Pb_TD_CONC_BOTTLE	pmol/kg	Concentration of total dissolvable Pb (dissolved plus reactive particulate phase that dissolves while stored acidified)
+var107	Ti_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Ti
+var108	U_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved U
+var109	V_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved V
+var110	Zn_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved Zn
+var111	Hg_Me_T_CONC_BOTTLE	pmol/kg	Concentration of total (unfiltered, dissolved plus total particulate) TotalMethyl Hg (mono + di methyl Hg)
+var112	Al_D_CONC_FISH	nmol/kg	Concentration of dissolved Al
+var113	Ba_D_CONC_FISH	nmol/kg	Concentration of dissolved Ba
+var114	Cd_D_CONC_FISH	nmol/kg	Concentration of dissolved Cd
+var115	Co_D_CONC_FISH	pmol/kg	Concentration of dissolved Co (after UV oxidation)
+var116	Cu_D_CONC_FISH	nmol/kg	Concentration of dissolved Cu
+var117	Fe_D_CONC_FISH	nmol/kg	Concentration of dissolved Fe
+var118	Fe_II_D_CONC_FISH	nmol/kg	Concentration of dissolved Fe(II)
+var119	Fe_S_CONC_FISH	nmol/kg	Concentration of operationally defined soluble Fe (colloids excluded)
+var120	Ga_D_CONC_FISH	pmol/kg	Concentration of dissolved Ga
+var121	Hf_D_CONC_FISH	pmol/kg	Concentration of dissolved Hf
+var122	Hg_D_CONC_FISH	pmol/kg	Concentration of dissolved Hg
+var123	Mn_D_CONC_FISH	nmol/kg	Concentration of dissolved Mn, method may include Mn(II) plus Mn(III)
+var124	Mo_D_CONC_FISH	nmol/kg	Concentration of dissolved Mo
+var125	Ni_D_CONC_FISH	nmol/kg	Concentration of dissolved Ni
+var126	Pb_D_CONC_FISH	pmol/kg	Concentration of dissolved Pb
+var127	Pb_TD_CONC_FISH	pmol/kg	Concentration of total dissolvable Pb (dissolved plus reactive particulate phase that dissolves while stored acidified)
+var128	Ti_D_CONC_FISH	pmol/kg	Concentration of dissolved Ti
+var129	V_D_CONC_FISH	nmol/kg	Concentration of dissolved V
+var130	Zn_D_CONC_FISH	nmol/kg	Concentration of dissolved Zn
+var131	Hf_D_CONC_UWAY	pmol/kg	Concentration of dissolved Hf
+var132	Al_D_CONC_BOAT_PUMP	nmol/kg	Concentration of dissolved Al
+var133	Ba_D_CONC_BOAT_PUMP	nmol/kg	Concentration of dissolved Ba
+var134	Cd_D_CONC_BOAT_PUMP	nmol/kg	Concentration of dissolved Cd
+var135	Co_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Co (after UV oxidation)
+var136	Cu_D_CONC_BOAT_PUMP	nmol/kg	Concentration of dissolved Cu
+var137	Fe_D_CONC_BOAT_PUMP	nmol/kg	Concentration of dissolved Fe
+var138	Fe_II_D_CONC_BOAT_PUMP	nmol/kg	Concentration of dissolved Fe(II)
+var139	Ga_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Ga
+var140	Mn_D_CONC_BOAT_PUMP	nmol/kg	Concentration of dissolved Mn, method may include Mn(II) plus Mn(III)
+var141	Ni_D_CONC_BOAT_PUMP	nmol/kg	Concentration of dissolved Ni
+var142	Pb_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Pb
+var143	V_D_CONC_BOAT_PUMP	nmol/kg	Concentration of dissolved V
+var144	Zn_D_CONC_BOAT_PUMP	nmol/kg	Concentration of dissolved Zn
+var145	Al_D_CONC_SUBICE_PUMP	nmol/kg	Concentration of dissolved Al
+var146	Ba_D_CONC_SUBICE_PUMP	nmol/kg	Concentration of dissolved Ba
+var147	Cd_D_CONC_SUBICE_PUMP	nmol/kg	Concentration of dissolved Cd
+var148	Co_D_CONC_SUBICE_PUMP	pmol/kg	Concentration of dissolved Co (after UV oxidation)
+var149	Cu_D_CONC_SUBICE_PUMP	nmol/kg	Concentration of dissolved Cu
+var150	Fe_D_CONC_SUBICE_PUMP	nmol/kg	Concentration of dissolved Fe
+var151	Ga_D_CONC_SUBICE_PUMP	pmol/kg	Concentration of dissolved Ga
+var152	Mn_D_CONC_SUBICE_PUMP	nmol/kg	Concentration of dissolved Mn, method may include Mn(II) plus Mn(III)
+var153	Ni_D_CONC_SUBICE_PUMP	nmol/kg	Concentration of dissolved Ni
+var154	Pb_D_CONC_SUBICE_PUMP	pmol/kg	Concentration of dissolved Pb
+var155	V_D_CONC_SUBICE_PUMP	nmol/kg	Concentration of dissolved V
+var156	Zn_D_CONC_SUBICE_PUMP	nmol/kg	Concentration of dissolved Zn
+var157	Ba_138_134_D_DELTA_BOTTLE	per 10^3	Atom ratio of dissolved Ba isotopes expressed in conventional DELTA notation referenced to {NIST 3104a}
+var158	Cd_114_110_D_DELTA_BOTTLE	per 10^3	Atom ratio of dissolved Cd isotopes expressed in conventional DELTA notation referenced to {NIST3108}
+var159	Cu_65_63_D_DELTA_BOTTLE	per 10^3	Atom ratio of dissolved Cu isotopes expressed in conventional DELTA notation referenced to {NIST976}
+var160	Fe_56_54_D_DELTA_BOTTLE	per 10^3	Atom ratio of dissolved Fe isotopes expressed in conventional DELTA notation referenced to {IRMM-14}
+var161	Ni_60_58_D_DELTA_BOTTLE	per 10^3	Atom ratio of dissolved Ni isotopes expressed in conventional DELTA notation referenced to {NIST986}
+var162	Zn_66_64_D_DELTA_BOTTLE	per 10^3	Atom ratio of dissolved Zn isotopes expressed in conventional DELTA notation referenced to {Lyon-JMC}
+var163	Cd_114_110_D_DELTA_FISH	per 10^3	Atom ratio of dissolved Cd isotopes expressed in conventional DELTA notation referenced to {NIST3108}
+var164	Fe_56_54_D_DELTA_FISH	per 10^3	Atom ratio of dissolved Fe isotopes expressed in conventional DELTA notation referenced to {IRMM-14}
+var165	Ni_60_58_D_DELTA_FISH	per 10^3	Atom ratio of dissolved Ni isotopes expressed in conventional DELTA notation referenced to {NIST986}
+var166	Zn_66_64_D_DELTA_FISH	per 10^3	Atom ratio of dissolved Zn isotopes expressed in conventional DELTA notation referenced to {Lyon-JMC}
+var167	Ba_138_134_D_DELTA_BOAT_PUMP	per 10^3	Atom ratio of dissolved Ba isotopes expressed in conventional DELTA notation referenced to {NIST 3104a}
+var168	Ba_138_134_D_DELTA_SUBICE_PUMP	per 10^3	Atom ratio of dissolved Ba isotopes expressed in conventional DELTA notation referenced to {NIST 3104a}
+var169	Cs_137_D_CONC_BOTTLE	uBq/kg	Concentration (or activity) of dissolved 137Cs
+var170	I_129_D_CONC_BOTTLE	atoms/kg	Concentration of dissolved 129I
+var171	Np_237_D_CONC_BOTTLE	uBq/kg	Concentration of dissolved 237Np
+var172	Pu_239_D_CONC_BOTTLE	uBq/kg	Concentration of dissolved 239Pu
+var173	Pu_239_Pu_240_D_CONC_BOTTLE	uBq/kg	Concentration (or activity) of dissolved 239Pu+240Pu
+var174	Pu_240_D_CONC_BOTTLE	uBq/kg	Concentration of dissolved 240Pu
+var175	U_236_238_T_RATIO_BOTTLE	per 10^12	Atom ratio of given isotopes for total (unfiltered, dissolved plus total particulate) U expressed in parts per 10^12
+var176	U_236_D_CONC_BOTTLE	atoms/kg	Concentration of dissolved 236U
+var177	U_236_T_CONC_BOTTLE	atoms/kg	Concentration of total (unfiltered, dissolved plus total particulate) 236U
+var178	U_236_D_CONC_FISH	atoms/kg	Concentration of dissolved 236U
+var179	Cs_137_D_CONC_UWAY	uBq/kg	Concentration (or activity) of dissolved 137Cs
+var180	Pu_239_Pu_240_D_CONC_UWAY	uBq/kg	Concentration (or activity) of dissolved 239Pu+240Pu
+var181	Pb_206_204_D_RATIO_BOTTLE		Atom ratio of given isotopes for dissolved Pb referenced to {NBS981}
+var182	Pb_206_204_TD_RATIO_BOTTLE		Atom ratio of given isotopes of total dissolvable Pb isotopes referenced to {NBS981} (dissolved plus reactive particulate phase that dissolves while stored acidified)
+var183	Pb_206_207_D_RATIO_BOTTLE		Atom ratio of given isotopes for dissolved Pb referenced to {NBS981}
+var184	Pb_206_207_TD_RATIO_BOTTLE		Atom ratio of given isotopes of total dissolvable Pb isotopes referenced to {NBS981} (dissolved plus reactive particulate phase that dissolves while stored acidified)
+var185	Pb_208_207_D_RATIO_BOTTLE		Atom ratio of given isotopes for dissolved Pb referenced to {NBS981}
+var186	Pb_208_207_TD_RATIO_BOTTLE		Atom ratio of given isotopes of total dissolvable Pb isotopes referenced to {NBS981} (dissolved plus reactive particulate phase that dissolves while stored acidified)
+var187	Pb_207_204_TD_RATIO_BOTTLE		Atom ratio of given isotopes of total dissolvable Pb isotopes referenced to {NBS981} (dissolved plus reactive particulate phase that dissolves while stored acidified)
+var188	Pb_208_204_TD_RATIO_BOTTLE		Atom ratio of given isotopes of total dissolvable Pb isotopes referenced to {NBS981} (dissolved plus reactive particulate phase that dissolves while stored acidified)
+var189	Pb_208_206_D_RATIO_BOTTLE		Atom ratio of given isotopes for dissolved Pb referenced to {NBS981}
+var190	Pb_208_206_TD_RATIO_BOTTLE		Atom ratio of given isotopes of total dissolvable Pb isotopes referenced to {NBS981} (dissolved plus reactive particulate phase that dissolves while stored acidified)
+var191	Pb_206_204_D_RATIO_FISH		Atom ratio of given isotopes for dissolved Pb referenced to {NBS981}
+var192	Pb_206_204_TD_RATIO_FISH		Atom ratio of given isotopes of total dissolvable Pb isotopes referenced to {NBS981} (dissolved plus reactive particulate phase that dissolves while stored acidified)
+var193	Pb_206_207_D_RATIO_FISH		Atom ratio of given isotopes for dissolved Pb referenced to {NBS981}
+var194	Pb_206_207_TD_RATIO_FISH		Atom ratio of given isotopes of total dissolvable Pb isotopes referenced to {NBS981} (dissolved plus reactive particulate phase that dissolves while stored acidified)
+var195	Pb_208_207_D_RATIO_FISH		Atom ratio of given isotopes for dissolved Pb referenced to {NBS981}
+var196	Pb_208_207_TD_RATIO_FISH		Atom ratio of given isotopes of total dissolvable Pb isotopes referenced to {NBS981} (dissolved plus reactive particulate phase that dissolves while stored acidified)
+var197	Pb_207_204_TD_RATIO_FISH		Atom ratio of given isotopes of total dissolvable Pb isotopes referenced to {NBS981} (dissolved plus reactive particulate phase that dissolves while stored acidified)
+var198	Pb_208_204_TD_RATIO_FISH		Atom ratio of given isotopes of total dissolvable Pb isotopes referenced to {NBS981} (dissolved plus reactive particulate phase that dissolves while stored acidified)
+var199	Pb_208_206_TD_RATIO_FISH		Atom ratio of given isotopes of total dissolvable Pb isotopes referenced to {NBS981} (dissolved plus reactive particulate phase that dissolves while stored acidified)
+var200	Pb_206_204_D_RATIO_BOAT_PUMP		Atom ratio of given isotopes for dissolved Pb referenced to {NBS981}
+var201	Pb_206_207_D_RATIO_BOAT_PUMP		Atom ratio of given isotopes for dissolved Pb referenced to {NBS981}
+var202	Pb_208_207_D_RATIO_BOAT_PUMP		Atom ratio of given isotopes for dissolved Pb referenced to {NBS981}
+var203	Pa_231_D_CONC_BOTTLE	uBq/kg	Concentration (or activity) of dissolved 231Pa
+var204	Pb_210_D_CONC_BOTTLE	mBq/kg	Concentration (or activity) of dissolved 210Pb
+var205	Po_210_D_CONC_BOTTLE	mBq/kg	Concentration (or activity) of dissolved 210Po
+var206	Ra_224_D_CONC_BOTTLE	mBq/kg	Concentration (or activity) of dissolved 224Ra
+var207	Ra_226_D_CONC_BOTTLE	mBq/kg	Concentration (or activity) of dissolved 226Ra
+var208	Ra_228_T_CONC_BOTTLE	mBq/kg	Concentration (or activity) of total (unfiltered, dissolved plus total particulate) 228Ra
+var209	Ra_228_D_CONC_BOTTLE	mBq/kg	Concentration (or activity) of dissolved 228Ra
+var210	Th_230_T_CONC_BOTTLE	uBq/kg	Concentration (or activity) of total (unfiltered, dissolved plus total particulate) 230Th
+var211	Th_230_D_CONC_BOTTLE	uBq/kg	Concentration (or activity) of dissolved 230Th
+var212	Th_232_T_CONC_BOTTLE	pmol/kg	Concentration (or activity) of total (unfiltered, dissolved plus total particulate) 232Th
+var213	Th_232_D_CONC_BOTTLE	pmol/kg	Concentration (or activity) of dissolved 232Th
+var214	Th_234_T_CONC_BOTTLE	mBq/kg	Concentration (or activity) of total (unfiltered, dissolved plus total particulate) 234Th
+var215	Ac_227_D_CONC_PUMP	uBq/kg	Concentration (or activity) of dissolved 227AC
+var216	Be_7_T_CONC_PUMP	uBq/kg	Concentration (or activity) of total (unfiltered, dissolved plus total particulate) 7Be
+var217	Be_7_D_CONC_PUMP	uBq/kg	Concentration of dissolved 7Be
+var218	Ra_223_D_CONC_PUMP	mBq/kg	Concentration (or activity) of dissolved 223Ra
+var219	Ra_224_D_CONC_PUMP	mBq/kg	Concentration (or activity) of dissolved 224Ra
+var220	Ra_226_D_CONC_PUMP	mBq/kg	Concentration (or activity) of dissolved 226Ra
+var221	Ra_228_T_CONC_PUMP	mBq/kg	Concentration (or activity) of total (unfiltered, dissolved plus total particulate) 228Ra
+var222	Ra_228_D_CONC_PUMP	mBq/kg	Concentration (or activity) of dissolved 228Ra
+var223	Th_228_D_CONC_PUMP	uBq/kg	Concentration (or activity) of dissolved 228Th
+var224	Th_234_T_CONC_PUMP	mBq/kg	Concentration (or activity) of total (unfiltered, dissolved plus total particulate) 234Th
+var225	Pa_231_D_CONC_FISH	uBq/kg	Concentration (or activity) of dissolved 231Pa
+var226	Pb_210_D_CONC_FISH	mBq/kg	Concentration (or activity) of dissolved 210Pb
+var227	Po_210_D_CONC_FISH	mBq/kg	Concentration (or activity) of dissolved 210Po
+var228	Ra_226_D_CONC_FISH	mBq/kg	Concentration (or activity) of dissolved 226Ra
+var229	Ra_228_T_CONC_FISH	mBq/kg	Concentration (or activity) of total (unfiltered, dissolved plus total particulate) 228Ra
+var230	Th_230_D_CONC_FISH	uBq/kg	Concentration (or activity) of dissolved 230Th
+var231	Th_232_D_CONC_FISH	pmol/kg	Concentration (or activity) of dissolved 232Th
+var232	Th_234_T_CONC_FISH	mBq/kg	Concentration (or activity) of total (unfiltered, dissolved plus total particulate) 234Th
+var233	Pa_231_D_CONC_UWAY	uBq/kg	Concentration (or activity) of dissolved 231Pa
+var234	Po_210_D_CONC_UWAY	mBq/kg	Concentration (or activity) of dissolved 210Po
+var235	Pb_210_D_CONC_UWAY	mBq/kg	Concentration (or activity) of dissolved 210Pb
+var236	Ra_224_D_CONC_UWAY	mBq/kg	Concentration (or activity) of dissolved 224Ra
+var237	Ra_226_D_CONC_UWAY	mBq/kg	Concentration (or activity) of dissolved 226Ra
+var238	Ra_228_D_CONC_UWAY	mBq/kg	Concentration (or activity) of dissolved 228Ra
+var239	Th_228_D_CONC_UWAY	uBq/kg	Concentration (or activity) of dissolved 228Th
+var240	Th_230_D_CONC_UWAY	uBq/kg	Concentration (or activity) of dissolved 230Th
+var241	Th_232_D_CONC_UWAY	pmol/kg	Concentration (or activity) of dissolved 232Th
+var242	Th_234_T_CONC_UWAY	mBq/kg	Concentration (or activity) of total (unfiltered, dissolved plus total particulate) 234Th
+var243	Pa_231_D_CONC_BOAT_PUMP	uBq/kg	Concentration (or activity) of dissolved 231Pa
+var244	Th_230_D_CONC_BOAT_PUMP	uBq/kg	Concentration (or activity) of dissolved 230Th
+var245	Th_232_D_CONC_BOAT_PUMP	pmol/kg	Concentration (or activity) of dissolved 232Th
+var246	Pa_231_D_CONC_SUBICE_PUMP	uBq/kg	Concentration (or activity) of dissolved 231Pa
+var247	Th_230_D_CONC_SUBICE_PUMP	uBq/kg	Concentration (or activity) of dissolved 230Th
+var248	Th_232_D_CONC_SUBICE_PUMP	pmol/kg	Concentration (or activity) of dissolved 232Th
+var249	Th_234_T_CONC_SUBICE_PUMP	mBq/kg	Concentration (or activity) of total (unfiltered, dissolved plus total particulate) 234Th
+var250	Hf_176_177_D_EPSILON_BOTTLE	per 10^4	Atom ratio of dissolved Hf isotopes expressed in conventional EPSILON notation
+var251	Nd_143_144_D_EPSILON_BOTTLE	per 10^4	Atom ratio of dissolved Nd isotopes expressed in conventional EPSILON notation
+var252	Hf_176_177_D_EPSILON_FISH	per 10^4	Atom ratio of dissolved Hf isotopes expressed in conventional EPSILON notation
+var253	Nd_143_144_D_EPSILON_FISH	per 10^4	Atom ratio of dissolved Nd isotopes expressed in conventional EPSILON notation
+var254	Nd_143_144_D_EPSILON_UWAY	per 10^4	Atom ratio of dissolved Nd isotopes expressed in conventional EPSILON notation
+var255	Y_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Yttrium
+var256	La_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved La
+var257	Ce_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Ce
+var258	Pr_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Pr
+var259	Nd_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Nd
+var260	Sm_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Sm
+var261	Eu_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Eu
+var262	Gd_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Gd
+var263	Tb_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Tb
+var264	Dy_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Dy
+var265	Ho_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Ho
+var266	Er_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Er
+var267	Tm_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Tm
+var268	Yb_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Yb
+var269	Lu_D_CONC_BOTTLE	pmol/kg	Concentration of dissolved Lu
+var270	Y_D_CONC_FISH	pmol/kg	Concentration of dissolved Yttrium
+var271	La_D_CONC_FISH	pmol/kg	Concentration of dissolved La
+var272	Ce_D_CONC_FISH	pmol/kg	Concentration of dissolved Ce
+var273	Pr_D_CONC_FISH	pmol/kg	Concentration of dissolved Pr
+var274	Nd_D_CONC_FISH	pmol/kg	Concentration of dissolved Nd
+var275	Sm_D_CONC_FISH	pmol/kg	Concentration of dissolved Sm
+var276	Eu_D_CONC_FISH	pmol/kg	Concentration of dissolved Eu
+var277	Gd_D_CONC_FISH	pmol/kg	Concentration of dissolved Gd
+var278	Tb_D_CONC_FISH	pmol/kg	Concentration of dissolved Tb
+var279	Dy_D_CONC_FISH	pmol/kg	Concentration of dissolved Dy
+var280	Ho_D_CONC_FISH	pmol/kg	Concentration of dissolved Ho
+var281	Er_D_CONC_FISH	pmol/kg	Concentration of dissolved Er
+var282	Tm_D_CONC_FISH	pmol/kg	Concentration of dissolved Tm
+var283	Yb_D_CONC_FISH	pmol/kg	Concentration of dissolved Yb
+var284	Lu_D_CONC_FISH	pmol/kg	Concentration of dissolved Lu
+var285	La_D_CONC_UWAY	pmol/kg	Concentration of dissolved La
+var286	Ce_D_CONC_UWAY	pmol/kg	Concentration of dissolved Ce
+var287	Pr_D_CONC_UWAY	pmol/kg	Concentration of dissolved Pr
+var288	Nd_D_CONC_UWAY	pmol/kg	Concentration of dissolved Nd
+var289	Sm_D_CONC_UWAY	pmol/kg	Concentration of dissolved Sm
+var290	Eu_D_CONC_UWAY	pmol/kg	Concentration of dissolved Eu
+var291	Gd_D_CONC_UWAY	pmol/kg	Concentration of dissolved Gd
+var292	Tb_D_CONC_UWAY	pmol/kg	Concentration of dissolved Tb
+var293	Dy_D_CONC_UWAY	pmol/kg	Concentration of dissolved Dy
+var294	Ho_D_CONC_UWAY	pmol/kg	Concentration of dissolved Ho
+var295	Er_D_CONC_UWAY	pmol/kg	Concentration of dissolved Er
+var296	Tm_D_CONC_UWAY	pmol/kg	Concentration of dissolved Tm
+var297	Yb_D_CONC_UWAY	pmol/kg	Concentration of dissolved Yb
+var298	Lu_D_CONC_UWAY	pmol/kg	Concentration of dissolved Lu
+var299	La_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved La
+var300	Ce_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Ce
+var301	Pr_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Pr
+var302	Nd_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Nd
+var303	Sm_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Sm
+var304	Eu_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Eu
+var305	Gd_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Gd
+var306	Tb_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Tb
+var307	Dy_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Dy
+var308	Ho_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Ho
+var309	Er_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Er
+var310	Tm_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Tm
+var311	Yb_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Yb
+var312	Lu_D_CONC_BOAT_PUMP	pmol/kg	Concentration of dissolved Lu
+var313	Cu_Cu'_D_CONC_BOTTLE	fmol/kg	Concentration of  dissolved inorganic Cu
+var314	L1Cu_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved L1 Cu-binding ligand
+var315	L1Cu_D_LogK_BOTTLE		Log of the conditional stability constant for binding of Cu by  L1 Cu-binding ligand
+var316	LFe_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved iron binding ligand when only one ligand is determined
+var317	LFe_D_LogK_BOTTLE		Log of the conditional stability constant for binding of Fe by the dissolved Fe-binding ligand when only one ligand is determined
+var318	L1Fe_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved L1 Fe-binding ligand
+var319	L1Fe_D_LogK_BOTTLE		Log of the conditional stability constant for binding of Fe by L1 Fe-binding ligand
+var320	L2Fe_D_CONC_BOTTLE	nmol/kg	Concentration of dissolved L2 Fe-binding ligand
+var321	L2Fe_D_LogK_BOTTLE		Log of the conditional stability constant for binding of Fe by L2 Fe-binding ligand
+var322	Cu_Cu'_D_CONC_FISH	fmol/kg	Concentration of  dissolved inorganic Cu
+var323	L1Cu_D_CONC_FISH	nmol/kg	Concentration of dissolved L1 Cu-binding ligand
+var324	L1Cu_D_LogK_FISH		Log of the conditional stability constant for binding of Cu by  L1 Cu-binding ligand
+var325	L1Fe_D_CONC_FISH	nmol/kg	Concentration of dissolved L1 Fe-binding ligand
+var326	L1Fe_D_LogK_FISH		Log of the conditional stability constant for binding of Fe by L1 Fe-binding ligand
+var327	L2Fe_D_CONC_FISH	nmol/kg	Concentration of dissolved L2 Fe-binding ligand
+var328	L2Fe_D_LogK_FISH		Log of the conditional stability constant for binding of Fe by L2 Fe-binding ligand
+var329	Al_TP_CONC_BOTTLE	nmol/kg	Concentration of total particulate aluminium determined by filtration from a water sampling bottle
+var330	Al_TPL_CONC_BOTTLE	nmol/kg	Concentration of labile particulate aluminium determined by filtration from a water sampling bottle
+var331	Al_TPR_CONC_BOTTLE	nmol/kg	Concentration of refractory particulate aluminium determined by filtration from a water sampling bottle
+var332	Ba_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate barium determined by filtration from a water sampling bottle
+var333	Ba_TPL_CONC_BOTTLE	pmol/kg	Concentration of labile particulate barium determined by filtration from a water sampling bottle
+var334	Cd_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate cadmium determined by filtration from a water sampling bottle
+var335	Cd_TPL_CONC_BOTTLE	pmol/kg	Concentration of labile particulate cadmium determined by filtration from a water sampling bottle
+var336	Cd_TPR_CONC_BOTTLE	pmol/kg	Concentration of refractory particulate cadmium determined by filtration from a water sampling bottle
+var337	Co_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate cobalt determined by filtration from a water sampling bottle
+var338	Co_TPL_CONC_BOTTLE	pmol/kg	Concentration of labile particulate cobalt determined by filtration from a water sampling bottle
+var339	Co_TPR_CONC_BOTTLE	pmol/kg	Concentration of refractory particulate cobalt determined by filtration from a water sampling bottle
+var340	Cr_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate chromium determined by filtration from a water sampling bottle
+var341	Cu_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate copper determined by filtration from a water sampling bottle
+var342	Cu_TPL_CONC_BOTTLE	pmol/kg	Concentration of labile particulate copper determined by filtration from a water sampling bottle
+var343	Fe_TP_CONC_BOTTLE	nmol/kg	Concentration of total particulate iron determined by filtration from a water sampling bottle
+var344	Fe_TPL_CONC_BOTTLE	nmol/kg	Concentration of labile particulate iron determined by filtration from a water sampling bottle
+var345	Fe_TPR_CONC_BOTTLE	nmol/kg	Concentration of refractory particulate iron determined by filtration from a water sampling bottle
+var346	Mn_TP_CONC_BOTTLE	nmol/kg	Concentration of total particulate manganese determined by filtration from a water sampling bottle
+var347	Mn_TPL_CONC_BOTTLE	nmol/kg	Concentration of labile particulate manganese determined by filtration from a water sampling bottle
+var348	Mn_TPR_CONC_BOTTLE	nmol/kg	Concentration of refractory particulate manganese determined by filtration from a water sampling bottle
+var349	Mo_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate molybdenum determined by filtration from a water sampling bottle
+var350	Mo_TPL_CONC_BOTTLE	pmol/kg	Concentration of labile particulate molybdenum determined by filtration from a water sampling bottle
+var351	Ni_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate nickel determined by filtration from a water sampling bottle
+var352	Ni_TPL_CONC_BOTTLE	pmol/kg	Concentration of labile particulate nickel determined by filtration from a water sampling bottle
+var353	P_TP_CONC_BOTTLE	nmol/kg	Concentration of total particulate phosphorus determined by filtration from a water sampling bottle
+var354	P_TPL_CONC_BOTTLE	nmol/kg	Concentration of labile particulate phosphorus determined by filtration from a water sampling bottle
+var355	P_TPR_CONC_BOTTLE	nmol/kg	Concentration of refractory particulate phosphorus determined by filtration from a water sampling bottle
+var356	Pb_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate lead determined by filtration from a water sampling bottle
+var357	Pb_TPL_CONC_BOTTLE	pmol/kg	Concentration of labile particulate lead determined by filtration from a water sampling bottle
+var358	Sc_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate scandium determined by filtration from a water sampling bottle
+var359	Th_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate thorium determined by filtration from a water sampling bottle
+var360	Th_TPL_CONC_BOTTLE	pmol/kg	Concentration of labile particulate thorium determined by filtration from a water sampling bottle
+var361	Ti_TP_CONC_BOTTLE	nmol/kg	Concentration of total particulate titanium determined by filtration from a water sampling bottle
+var362	Ti_TPL_CONC_BOTTLE	nmol/kg	Concentration of labile particulate titanium determined by filtration from a water sampling bottle
+var363	Ti_TPR_CONC_BOTTLE	nmol/kg	Concentration of refractory particulate titanium determined by filtration from a water sampling bottle
+var364	V_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate vanadium determined by filtration from a water sampling bottle
+var365	V_TPL_CONC_BOTTLE	pmol/kg	Concentration of labile particulate vanadium determined by filtration from a water sampling bottle
+var366	Zn_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate zinc determined by filtration from a water sampling bottle
+var367	Zn_TPL_CONC_BOTTLE	pmol/kg	Concentration of labile particulate zinc determined by filtration from a water sampling bottle
+var368	Ag_LPT_CONC_PUMP	pmol/kg	Concentration of total particulate silver determined by in situ filtration (pump) collected on a prefilter (large particles)
+var369	Ag_SPT_CONC_PUMP	pmol/kg	Concentration of total particulate silver determined by in situ filtration (pump) collected on a main filter (small particles)
+var370	Al_TP_CONC_PUMP	nmol/kg	Concentration of total particulate aluminium determined by in situ filtration (pump) without size fractionation
+var371	Al_LPT_CONC_PUMP	nmol/kg	Concentration of total particulate aluminium determined by in situ filtration (pump) collected on a prefilter (large particles)
+var372	Al_SPT_CONC_PUMP	nmol/kg	Concentration of total particulate aluminium determined by in situ filtration (pump) collected on a main filter (small particles)
+var373	Al_SPL_CONC_PUMP	nmol/kg	Concentration of labile particulate aluminium determined by in situ filtration (pump) collected on a main filter (small particles)
+var374	Ba_LPT_CONC_PUMP	pmol/kg	Concentration of total particulate barium determined by in situ filtration (pump) collected on a prefilter (large particles)
+var375	Ba_SPT_CONC_PUMP	pmol/kg	Concentration of total particulate barium determined by in situ filtration (pump) collected on a main filter (small particles)
+var376	Ba_SPL_CONC_PUMP	pmol/kg	Concentration of labile particulate barium determined by in situ filtration (pump) collected on a main filter (small particles)
+var377	Cd_TP_CONC_PUMP	pmol/kg	Concentration of total particulate cadmium determined by in situ filtration (pump) without size fractionation
+var378	Cd_LPT_CONC_PUMP	pmol/kg	Concentration of total particulate cadmium determined by in situ filtration (pump) collected on a prefilter (large particles)
+var379	Cd_SPT_CONC_PUMP	pmol/kg	Concentration of total particulate cadmium determined by in situ filtration (pump) collected on a main filter (small particles)
+var380	Co_LPT_CONC_PUMP	pmol/kg	Concentration of total particulate cobalt determined by in situ filtration (pump) collected on a prefilter (large particles)
+var381	Co_SPT_CONC_PUMP	pmol/kg	Concentration of total particulate cobalt determined by in situ filtration (pump) collected on a main filter (small particles)
+var382	Cu_LPT_CONC_PUMP	pmol/kg	Concentration of total particulate copper determined by in situ filtration (pump) collected on a prefilter (large particles)
+var383	Cu_SPT_CONC_PUMP	pmol/kg	Concentration of total particulate copper determined by in situ filtration (pump) collected on a main filter (small particles)
+var384	Cu_SPL_CONC_PUMP	pmol/kg	Concentration of labile particulate copper determined by in situ filtration (pump) collected on a main filter (small particles)
+var385	Fe_TP_CONC_PUMP	nmol/kg	Concentration of total particulate iron determined by in situ filtration (pump) without size fractionation
+var386	Fe_LPT_CONC_PUMP	nmol/kg	Concentration of total particulate iron determined by in situ filtration (pump) collected on a prefilter (large particles)
+var387	Fe_SPT_CONC_PUMP	nmol/kg	Concentration of total particulate iron determined by in situ filtration (pump) collected on a main filter (small particles)
+var388	Fe_SPL_CONC_PUMP	nmol/kg	Concentration of labile particulate iron determined by in situ filtration (pump) collected on a main filter (small particles)
+var389	Ga_TP_CONC_PUMP	pmol/kg	Concentration of total particulate gallium determined by in situ filtration (pump) without size fractionation
+var390	Hg_SPT_CONC_PUMP	pmol/kg	Concentration of total particulate mercury determined by in situ filtration (pump) collected on a main filter (small particles)
+var391	Hg_MM_SPT_CONC_PUMP	pmol/kg	Concentration of total particulate monomethyl mercury determined by in situ filtration (pump) collected on a main filter (small particles)
+var392	Mn_TP_CONC_PUMP	nmol/kg	Concentration of total particulate manganese determined by in situ filtration (pump) without size fractionation
+var393	Mn_LPT_CONC_PUMP	nmol/kg	Concentration of total particulate manganese determined by in situ filtration (pump) collected on a prefilter (large particles)
+var394	Mn_SPT_CONC_PUMP	nmol/kg	Concentration of total particulate manganese determined by in situ filtration (pump) collected on a main filter (small particles)
+var395	Mn_SPL_CONC_PUMP	nmol/kg	Concentration of labile particulate manganese determined by in situ filtration (pump) collected on a main filter (small particles)
+var396	Mo_TP_CONC_PUMP	pmol/kg	Concentration of total particulate molybdenum determined by in situ filtration (pump) without size fractionation
+var397	Mo_LPT_CONC_PUMP	pmol/kg	Concentration of total particulate moybdenum determined by in situ filtration (pump) collected on a prefilter (large particles)
+var398	Mo_SPT_CONC_PUMP	pmol/kg	Concentration of total particulate molybdenum determined by in situ filtration (pump) collected on a main filter (small particles)
+var399	Ni_TP_CONC_PUMP	pmol/kg	Concentration of total particulate nickel determined by in situ filtration (pump) without size fractionation
+var400	Ni_LPT_CONC_PUMP	pmol/kg	Concentration of total particulate nickel determined by in situ filtration (pump) collected on a prefilter (large particles)
+var401	Ni_SPT_CONC_PUMP	pmol/kg	Concentration of total particulate nickel determined by in situ filtration (pump) collected on a main filter (small particles)
+var402	Ni_SPL_CONC_PUMP	pmol/kg	Concentration of labile particulate nickel determined by in situ filtration (pump) collected on a main filter (small particles)
+var403	P_TP_CONC_PUMP	nmol/kg	Concentration of total particulate phosphorus determined by in situ filtration (pump) without size fractionation
+var404	P_LPT_CONC_PUMP	nmol/kg	Concentration of total particulate phosphorus determined by in situ filtration (pump) collected on a prefilter (large particles)
+var405	P_SPT_CONC_PUMP	nmol/kg	Concentration of total particulate phosphorus determined by in situ filtration (pump) collected on a main filter (small particles)
+var406	P_SPL_CONC_PUMP	nmol/kg	Concentration of labile particulate phosphorus determined by in situ filtration (pump) collected on a main filter (small particles)
+var407	Pb_TP_CONC_PUMP	pmol/kg	Concentration of total particulate lead determined by in situ filtration (pump) without size fractionation
+var408	Pb_LPT_CONC_PUMP	pmol/kg	Concentration of total particulate lead determined by in situ filtration (pump) collected on a prefilter (large particles)
+var409	Pb_SPT_CONC_PUMP	pmol/kg	Concentration of total particulate lead determined by in situ filtration (pump) collected on a main filter (small particles)
+var410	Th_TP_CONC_PUMP	pmol/kg	Concentration of total particulate thorium determined by in situ filtration (pump) without size fractionation
+var411	Th_LPT_CONC_PUMP	pmol/kg	Concentration of total particulate thorium determined by in situ filtration (pump) collected on a prefilter (large particles)
+var412	Th_SPT_CONC_PUMP	pmol/kg	Concentration of total particulate thorium determined by in situ filtration (pump) collected on a main filter (small particles)
+var413	Ti_LPT_CONC_PUMP	nmol/kg	Concentration of total particulate titanium determined by in situ filtration (pump) collected on a prefilter (large particles)
+var414	Ti_SPT_CONC_PUMP	nmol/kg	Concentration of total particulate titanium determined by in situ filtration (pump) collected on a main filter (small particles)
+var415	U_TP_CONC_PUMP	pmol/kg	Concentration of total particulate uranium determined by in situ filtration (pump) without size fractionation
+var416	V_TP_CONC_PUMP	pmol/kg	Concentration of total particulate vanadium determined by in situ filtration (pump) without size fractionation
+var417	V_LPT_CONC_PUMP	pmol/kg	Concentration of total particulate vanadium determined by in situ filtration (pump) collected on a prefilter (large particles)
+var418	V_SPT_CONC_PUMP	pmol/kg	Concentration of total particulate vanadium determined by in situ filtration (pump) collected on a main filter (small particles)
+var419	V_SPL_CONC_PUMP	pmol/kg	Concentration of labile particulate vanadium determined by in situ filtration (pump) collected on a main filter (small particles)
+var420	Zn_TP_CONC_PUMP	pmol/kg	Concentration of total particulate zinc determined by in situ filtration (pump) without size fractionation
+var421	Al_TP_CONC_FISH	nmol/kg	Concentration of total particulate aluminium determined by towed fish without size fractionation
+var422	Al_TPL_CONC_FISH	nmol/kg	Concentration of labile particulate aluminum determined by towed fish without size fractionation
+var423	Ba_TP_CONC_FISH	pmol/kg	Concentration of total particulate barium determined by towed fish without size fractionation
+var424	Ba_TPL_CONC_FISH	pmol/kg	Concentration of labile particulate barium determined by towed fish without size fractionation
+var425	Cd_TP_CONC_FISH	pmol/kg	Concentration of total particulate cadmium determined by towed fish without size fractionation
+var426	Cd_TPL_CONC_FISH	pmol/kg	Concentration of labile particulate cadmium determined by towed fish without size fractionation
+var427	Co_TP_CONC_FISH	pmol/kg	Concentration of total particulate cobalt determined by towed fish without size fractionation
+var428	Co_TPL_CONC_FISH	pmol/kg	Concentration of labile particulate cobalt determined by towed fish without size fractionation
+var429	Cu_TP_CONC_FISH	pmol/kg	Concentration of total particulate copper determined by towed fish without size fractionation
+var430	Cu_TPL_CONC_FISH	pmol/kg	Concentration of labile particulate copper determined by towed fish without size fractionation
+var431	Fe_TP_CONC_FISH	nmol/kg	Concentration of total particulate iron determined by towed fish without size fractionation
+var432	Fe_TPL_CONC_FISH	nmol/kg	Concentration of labile particulate iron determined by towed fish without size fractionation
+var433	Mn_TP_CONC_FISH	nmol/kg	Concentration of total particulate manganese determined by towed fish without size fractionation
+var434	Mn_TPL_CONC_FISH	nmol/kg	Concentration of labile particulate manganese determined by towed fish without size fractionation
+var435	Ni_TP_CONC_FISH	pmol/kg	Concentration of total particulate nickel determined by towed fish without size fractionation
+var436	Ni_TPL_CONC_FISH	pmol/kg	Concentration of labile particulate nickel determined by towed fish without size fractionation
+var437	P_TP_CONC_FISH	nmol/kg	Concentration of total particulate phosphorus determined by towed fish without size fractionation
+var438	P_TPL_CONC_FISH	nmol/kg	Concentration of labile particulate phosphorus determined by towed fish without size fractionation
+var439	Pb_TP_CONC_FISH	pmol/kg	Concentration of total particulate lead determined by towed fish without size fractionation
+var440	Pb_TPL_CONC_FISH	pmol/kg	Concentration of labile particulate lead determined by towed fish without size fractionation
+var441	Th_TP_CONC_FISH	pmol/kg	Concentration of total particulate thorium determined by towed fish without size fractionation
+var442	Th_TPL_CONC_FISH	pmol/kg	Concentration of labile particulate thorium determined by towed fish without size fractionation
+var443	Ti_TP_CONC_FISH	nmol/kg	Concentration of total particulate titanium determined by towed fish without size fractionation
+var444	Ti_TPL_CONC_FISH	nmol/kg	Concentration of labile particulate titanium determined by towed fish without size fractionation
+var445	V_TP_CONC_FISH	pmol/kg	Concentration of total particulate vanadium determined by towed fish without size fractionation
+var446	V_TPL_CONC_FISH	pmol/kg	Concentration of labile particulate vanadium determined by towed fish without size fractionation
+var447	Zn_TP_CONC_FISH	pmol/kg	Concentration of total particulate zinc determined by towed fish without size fractionation
+var448	Zn_TPL_CONC_FISH	pmol/kg	Concentration of labile particulate zinc determined by towed fish without size fractionation
+var449	bSi_30_28_TP_DELTA_PUMP	per 10^3	Atom ratio of Si isotopes in biogenic Si (opal) expressed in conventional DELTA notation determined by in situ filtration (pump) without size fractionation referenced to {NBS28}
+var450	PIC_LPT_CONC_PUMP	umol C/kg	Concentration of particulate inorganic carbon determined by in situ filtration (pump) collected on a prefilter (large particles)
+var451	PIC_SPT_CONC_PUMP	umol C/kg	Concentration of particulate inorganic carbon determined by in situ filtration (pump) collected on a main filter (small particles)
+var452	C_LPT_CONC_PUMP	umol C/kg	Concentration of particulate total carbon determined by in situ filtration (pump) collected on a prefilter (large particles)
+var453	C_SPT_CONC_PUMP	umol C/kg	Concentration of particulate total carbon determined by in situ filtration (pump) collected on a main filter (small particles)
+var454	POC_LPT_CONC_PUMP	umol C/kg	Concentration of particulate organic carbon determined by in situ filtration (pump) collected on a prefilter (large particles)
+var455	POC_SPT_CONC_PUMP	umol C/kg	Concentration of particulate organic carbon determined by in situ filtration (pump) collected on a main filter (small particles)
+var456	N_LPT_CONC_PUMP	nmol N/kg	Concentration of particulate nitrogen determined by in situ filtration (pump) collected on a prefilter (large particles)
+var457	N_SPT_CONC_PUMP	nmol N/kg	Concentration of particulate nitrogen determined by in situ filtration (pump) collected on a main filter (small particles)
+var458	bSi_TP_CONC_PUMP	nmol Si/kg	Concentration of particulate biogenic silicon determined by in situ filtration (pump) without size fractionation, see metadata for assumed molecular composition (e.g., opal, calculated as 67.9 g opal/mole Si)
+var459	bSi_LPT_CONC_PUMP	nmol Si/kg	Concentration of particulate biogenic silicon determined by in situ filtration (pump) collected on a prefilter (large particles), see metadata for assumed molecular composition (e.g., opal, calculated as 67.9 g opal/mole Si)
+var460	bSi_SPT_CONC_PUMP	nmol Si/kg	Concentration of particulate biogenic silicon determined by in situ filtration (pump) collected on a main filter (small particles), see metadata for assumed molecular composition (e.g., opal, calculated as 67.9 g opal/mole Si)
+var461	PARTICLEMASS_LPT_CONC_PUMP	ug/kg	Concentration of particulate mass (dry weight)  determined by in situ filtration (pump) collected on a prefilter (large particles)
+var462	PARTICLEMASS_SPT_CONC_PUMP	ug/kg	Concentration of particulate mass (dry weight)  determined by in situ filtration (pump) collected on a main filter (small particles)
+var463	Po_210_TP_CONC_BOTTLE	mBq/kg	Concentration of total particulate Po-210 determined by filtration from a water sampling bottle
+var464	Pb_210_TP_CONC_BOTTLE	mBq/kg	Concentration of total particulate Pb-210 determined by filtration from a water sampling bottle
+var465	Po_210_SPT_CONC_PUMP	mBq/kg	Concentration of total particulate Po-210 determined by in situ filtration (pump) collected on a main filter (small particles)
+var466	Po_210_LPT_CONC_PUMP	mBq/kg	Concentration of total particulate Po-210 determined by in situ filtration (pump) collected on a pre filter (large particles)
+var467	Pb_210_SPT_CONC_PUMP	mBq/kg	Concentration of total particulate Pb-210 determined by in situ filtration (pump) collected on a main filter (small particles)
+var468	Pb_210_LPT_CONC_PUMP	mBq/kg	Concentration of total particulate Pb-210 determined by in situ filtration (pump) collected on a pre filter (large particles)
+var469	Pa_231_TP_CONC_PUMP	uBq/kg	Concentration of total particulate Pa-231 determined by in situ filtration (pump) without size fractionation
+var470	Pa_231_SPT_CONC_PUMP	uBq/kg	Concentration of total particulate Pa-231 determined by in situ filtration (pump) collected on a main filter (small particles)
+var471	Pa_231_LPT_CONC_PUMP	uBq/kg	Concentration of total particulate Pa-231 determined by in situ filtration (pump) collected on a pre filter (large particles)
+var472	Th_228_SPT_CONC_PUMP	uBq/kg	Concentration of total particulate Th-228 determined by in situ filtration (pump) collected on a main filter (small particles)
+var473	Th_228_LPT_CONC_PUMP	uBq/kg	Concentration of total particulate Th-228 determined by in situ filtration (pump) collected on a pre filter (large particles)
+var474	Th_230_TP_CONC_PUMP	uBq/kg	Concentration of total particulate Th-230 determined by in situ filtration (pump) without size fractionation
+var475	Th_230_SPT_CONC_PUMP	uBq/kg	Concentration of total particulate Th-230 determined by in situ filtration (pump) collected on a main filter (small particles)
+var476	Th_230_LPT_CONC_PUMP	uBq/kg	Concentration of total particulate Th-230 determined by in situ filtration (pump) collected on a pre filter (large particles)
+var477	Th_232_TP_CONC_PUMP	pmol/kg	Concentration of total particulate Th-232 determined by in situ filtration (pump) without size fractionation
+var478	Th_232_SPT_CONC_PUMP	pmol/kg	Concentration of total particulate Th-232 determined by in situ filtration (pump) collected on a main filter (small particles)
+var479	Th_232_LPT_CONC_PUMP	pmol/kg	Concentration of total particulate Th-232 determined by in situ filtration (pump) collected on a pre filter (large particles)
+var480	Th_234_SPT_CONC_PUMP	mBq/kg	Concentration of total particulate Th-234 determined by in situ filtration (pump) collected on a main filter (small particles)
+var481	Th_234_LPT_CONC_PUMP	mBq/kg	Concentration of total particulate Th-234 determined by in situ filtration (pump) collected on a pre filter (large particles)
+var482	Po_210_TP_CONC_UWAY	mBq/kg	Concentration of total particulate Po-210 determined by ship's underway seawater system without size fractionation
+var483	Pb_210_TP_CONC_UWAY	mBq/kg	Concentration of total particulate Pb-210 determined by ship's underway seawater system without size fractionation
+var484	Nd_143_144_TP_EPSILON_PUMP	per 10^4	Atom ratio of total particulate Nd isotopes expressed in conventional EPSILON notation determined by in situ filtration (pump) without size fractionation
+var485	Y_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate yttrium determined by filtration from a water sampling bottle
+var486	La_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate lanthanum determined by filtration from a water sampling bottle
+var487	Ce_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate cerium determined by filtration from a water sampling bottle
+var488	Pr_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate praseodymium determined by filtration from a water sampling bottle
+var489	Nd_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate neodymium determined by filtration from a water sampling bottle
+var490	Sm_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate samarium determined by filtration from a water sampling bottle
+var491	Eu_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate europium determined by filtration from a water sampling bottle
+var492	Gd_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate gadolinium determined by filtration from a water sampling bottle
+var493	Tb_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate terbium determined by filtration from a water sampling bottle
+var494	Dy_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate dysprosium determined by filtration from a water sampling bottle
+var495	Ho_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate holmium determined by filtration from a water sampling bottle
+var496	Er_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate erbium determined by filtration from a water sampling bottle
+var497	Tm_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate thullium determined by filtration from a water sampling bottle
+var498	Yb_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate ytterbium determined by filtration from a water sampling bottle
+var499	Lu_TP_CONC_BOTTLE	pmol/kg	Concentration of total particulate lutetium determined by filtration from a water sampling bottle
+var500	Y_LPT_CONC_PUMP	pmol/kg	Concentration of total particulate yttrium determined by in situ filtration (pump) collected on a prefilter (large particles)
+var501	Y_SPT_CONC_PUMP	pmol/kg	Concentration of total particulate yttrium determined by in situ filtration (pump) collected on a main filter (small particles)
+var502	Nd_TP_CONC_PUMP	pmol/kg	Concentration of total particulate neodymium determined by in situ filtration (pump) without size fractionation
+var503	Nd_LPT_CONC_PUMP	pmol/kg	Concentration of total particulate neodymium determined by in situ filtration (pump) collected on a prefilter (large particles)
+var504	Nd_SPT_CONC_PUMP	pmol/kg	Concentration of total particulate neodymium determined by in situ filtration (pump) collected on a main filter (small particles)
+var505	Y_TP_CONC_FISH	pmol/kg	Concentration of total particulate yttrium determined by towed fish without size fractionation
+var506	La_TP_CONC_FISH	pmol/kg	Concentration of total particulate lantanum determined by towed fish without size fractionation
+var507	Fe_56_54_TP_DELTA_BOTTLE	per 10^3	Atom ratio of total particulate Fe isotopes expressed in conventional DELTA notation determined by filtration from a water sampling bottle referenced to {IRMM-14}
+var508	Ba_138_134_SPL_DELTA_PUMP	per 10^3	Atom ratio of labile particulate Ba isotopes expressed in conventional DELTA notation determined by in situ filtration (pump) collected on a main filter (small particles) referenced to {NIST 3104a}
+var509	Cu_65_63_SPT_DELTA_PUMP	per 10^3	Atom ratio of total particulate Cu isotopes expressed in conventional DELTA notation determined by in situ filtration (pump) collected on a main filter (small particles) referenced to {NIST976}
+var510	Cu_65_63_SPL_DELTA_PUMP	per 10^3	Atom ratio of labile particulate Cu isotopes expressed in conventional DELTA notation determined by in situ filtration (pump) collected on a main filter (small particles) referenced to {NIST976}
+var511	Allo_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of Alloxanthin measured using HPLC method
+var512	Anth_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of Antheraxanthin measured using HPLC method
+var513	But fuco_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of 19' Butanoyloxyfucoxanthin measured using HPLC method
+var514	Alpha Car_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of alpha-Carotene measured using HPLC method
+var515	Beta Car_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of beta-Carotene measured using HPLC method
+var516	Diadino_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of Diadinoxanthin measured using HPLC method
+var517	Diato_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of Diatoxanthin measured using HPLC method
+var518	Fuco_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of Fucoxanthin measured using HPLC method
+var519	Hex fuco_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of 19' hexanoyloxyfucoxanthin measured using HPLC method
+var520	Lut_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of lutein measured using HPLC method
+var521	Neo_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of Neoxanthin measured using HPLC method
+var522	Perid_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of Peridinin measured using HPLC method
+var523	Pras_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of Prasinoxanthin measured using HPLC method
+var524	Viola_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of Violaxanthin measured using HPLC method
+var525	Zea_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of Zeaxanthin measured using HPLC method
+var526	Gyrox_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of gyroxanthin-diester measured using HPLC method
+var527	Allo_HPLC_TP_CONC_FISH	ng/liter	concentration of Alloxanthin measured using HPLC method
+var528	But fuco_HPLC_TP_CONC_FISH	ng/liter	concentration of 19' Butanoyloxyfucoxanthin measured using HPLC method
+var529	Beta Car_HPLC_TP_CONC_FISH	ng/liter	concentration of beta-Carotene measured using HPLC method
+var530	Diadino_HPLC_TP_CONC_FISH	ng/liter	concentration of Diadinoxanthin measured using HPLC method
+var531	Fuco_HPLC_TP_CONC_FISH	ng/liter	concentration of Fucoxanthin measured using HPLC method
+var532	Hex fuco_HPLC_TP_CONC_FISH	ng/liter	concentration of 19' hexanoyloxyfucoxanthin measured using HPLC method
+var533	Lut_HPLC_TP_CONC_FISH	ng/liter	concentration of lutein measured using HPLC method
+var534	Perid_HPLC_TP_CONC_FISH	ng/liter	concentration of Peridinin measured using HPLC method
+var535	Viola_HPLC_TP_CONC_FISH	ng/liter	concentration of Violaxanthin measured using HPLC method
+var536	Zea_HPLC_TP_CONC_FISH	ng/liter	concentration of Zeaxanthin measured using HPLC method
+var537	Chl a_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of Chlorophyll a measured using HPLC method
+var538	Chl b_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of Chlorophyll b measured using HPLC method
+var539	Chl c3_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of Chlorophyll c3 measured using HPLC method
+var540	Chl c1-chl c2_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of chlorophyll c1 + chlorophyll c2 measured using HPLC method
+var541	Chl c TOT_HPLC_TP_CONC_BOTTLE	ng/liter	sum of the concentrations of chl c1 + chl c2 + chl c3 when reported together
+var542	Chl a allom_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of chlorophyll a allomer measured using HPLC method
+var543	Chl a epimer_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of chlorophyll a epimer (ie. chl a') measured using HPLC method
+var544	Chlide a_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of chlorophyllide a measured using HPLC method
+var545	DV chl a_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of divinyl chlorophyll a measured using HPLC method
+var546	Chl a-DV chla_HPLC_TP_CONC_BOTTLE	ng/liter	concentration of chlorophyll a + divinyl chlorophyll a measured using HPLC method
+var547	Chl a_HPLC_TP_CONC_FISH	ng/liter	concentration of Chlorophyll a measured using HPLC method
+var548	Chl b_HPLC_TP_CONC_FISH	ng/liter	concentration of Chlorophyll b measured using HPLC method
+var549	Chl c3_HPLC_TP_CONC_FISH	ng/liter	concentration of Chlorophyll c3 measured using HPLC method
+var550	DV chl a_HPLC_TP_CONC_FISH	ng/liter	concentration of divinyl chlorophyll a measured using HPLC method
+var551	CHLA_FLUOR_TP_CONC_BOTTLE	ng/liter	Concentration of Chlorophyll a via fluorometric method without size fractionation of particles
+var552	PHAEO_FLUOR_TP_CONC_BOTTLE	ng/liter	Concentration of phaeopigments via fluorometric method without size fractionation of particles
+var553	PEP_VAAEAVLSMTK_NiSOD_ProSyn_TP_CONC_PUMP	fmol/liter	Nickel-containing superoxide dismutase [Synechococcus WH8102 and Prochlorococcus]. The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var554	PEP_SPYNQSLVANQIVNK_IdiA_Pro_TP_CONC_PUMP	fmol/liter	Iron ABC transporter, substrate binding protein (IdiA) [Prochlorococcus marinus MIT 9515]. The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var555	PEP_LHNFISSAESPK_Fld_Pro_TP_CONC_PUMP	fmol/liter	Flavodoxin [Prochlorococcus marinus MIT 9515]. The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var556	PEP_AGADMVGYVDK_Fld_Pro_TP_CONC_PUMP	fmol/liter	Flavodoxin [Prochlorococcus marinus MIT 9515]. The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var557	PEP_TVGIYYATTTGK_Fld_Pro_TP_CONC_PUMP	fmol/liter	Flavodoxin [Prochlorococcus marinus MIT 9515]. The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var558	PEP_VNSVIDAIAEAAK_P-II-glnB-glnK_Pro_TP_CONC_PUMP	fmol/liter	Nitrogen Regulatory Protein P-II glnB glnK [Prochlorococcus]. The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var559	PEP_LSHQAIAEAIGSTR_NtcA_Cyano_TP_CONC_PUMP	fmol/liter	Nitrogen Regulatory Protein NtcA [Cyanobacteria]. The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var560	PEP_SKLEDDPANPELILTAR_PhoP_Syn_TP_CONC_PUMP	fmol/liter	Two Component Phosphate Regulator PhoP [Synechococcus WH8109] (45% Identity to Bacillus subtilis PY79 PhoP). The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var561	PEP_LIDQDGVPVVFGGWTSASR_UreaTran_Pro_TP_CONC_PUMP	fmol/liter	Urea ABC transporter, substrate binding protein [Prochlorococcus marinus MIT 9215]. The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var562	PEP_VVGEDYLPLGNTEVAPIISK_UreaTran_Pro_TP_CONC_PUMP	fmol/liter	Urea ABC transporter, substrate binding protein [Prochlorococcus marinus MIT 9215]. The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var563	PEP_IEYIVEDGASDWPTFAEK_UreaTran_ProSyn_TP_CONC_PUMP	fmol/liter	Urea ABC transporter [Prochlorococcus and Synechococcus]. The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var564	PEP_IPEDIAFAESR_UreC_Pro_TP_CONC_PUMP	fmol/liter	Urease Alpha subunit UreC (Prochlorococcus). The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var565	PEP_VGVAGPVGSGK_UreG_Pro_TP_CONC_PUMP	fmol/liter	Urease UreG (Prochlorococcus). The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var566	PEP_FDYDGDYGTVLNR_UDP-sulfoquin_m-taxa_TP_CONC_PUMP	fmol/liter	sulfolipid (UDP-sulfoquinovose, multiple taxa). The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var567	PEP_NEAVENDLIVDNK_UDP-sulfoquin_Pro_TP_CONC_PUMP	fmol/liter	sulfolipid (UDP-sulfoquinovose, Prochlorococcus). The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var568	PEP_EAYPDFASAK_NH4-transporter_Pro_TP_CONC_PUMP	fmol/liter	Ammonium transporter [Prochlorococcus MIT9312]. The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var569	PEP_FDSLINSADNVMTYK_Glut-synt_Pro_TP_CONC_PUMP	fmol/liter	Glutamine synthetase, glutamate--ammonia ligase [Prochlorococcus marinus MIT 9215]. The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var570	PEP_EGYFPVSPNDTAQDIR_Glut-synt_Pro_TP_CONC_PUMP	fmol/liter	Glutamine synthetase, glutamate--ammonia ligase [Prochlorococcus marinus MIT 9215]. The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var571	PEP_HAPSFLAFTNPTTNSYK_Glut-synt_ProSyn_TP_CONC_PUMP	fmol/liter	Glutamine synthetase, glutamate--ammonia ligase [Prochlorococcus and Synechococcus]. The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var572	PEP_VASLTGADINYLPNPR_UDP-sulfoquin_Pro_TP_CONC_PUMP	fmol/liter	sulfolipid (UDP-sulfoquinovose, Prochlorococcus). The letters correspond to abbreviations while the numbers are unique internal identifiers to differentiate sequences. Refer to Table S3 (PDF) for more information, including the sequence.
+var573	CELL_VOLUME_BOTTLE	um^3	Volume of cell in cubic microns
+var574	CELL_TYPE_BOTTLE		Information about type of cell, including taxon, assigned a numeric code: 1=diatom, 2=autotrophic flagellate, 3=autotrophic picoplankton, 4=ciliates, 5=autotrophic dinoflagellate.
+var575	Fe_CELL_CONC_BOTTLE	amol/cell	Fe measured in a specific individual cell with SXRF (attomoles (10^-18 moles) per cell
+var576	C_CELL_CONC_BOTTLE	fmol/cell	C measured in a specific individual cell with SXRF
+var577	Si_CELL_CONC_BOTTLE	amol/cell	Si measured in a specific individual cell with SXRF (attomoles (10^-18 moles) per cell
+var578	P_CELL_CONC_BOTTLE	amol/cell	P measured in a specific individual cell with SXRF (attomoles (10^-18 moles) per cell
+var579	S_CELL_CONC_BOTTLE	amol/cell	S measured in a specific individual cell with SXRF (attomoles (10^-18 moles) per cell
+var580	Mn_CELL_CONC_BOTTLE	amol/cell	Mn measured in a specific individual cell with SXRF (attomoles (10^-18 moles) per cell
+var581	Co_CELL_CONC_BOTTLE	amol/cell	Co measured in a specific individual cell with SXRF (attomoles (10^-18 moles) per cell
+var582	Ni_CELL_CONC_BOTTLE	amol/cell	Ni measured in a specific individual cell with SXRF (attomoles (10^-18 moles) per cell
+var583	Cu_CELL_CONC_BOTTLE	amol/cell	Cu measured in a specific individual cell with SXRF (attomoles (10^-18 moles) per cell
+var584	Zn_CELL_CONC_BOTTLE	amol/cell	Zn measured in a specific individual cell with SXRF (attomoles (10^-18 moles) per cell
