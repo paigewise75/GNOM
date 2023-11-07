@@ -30,7 +30,7 @@ function getinitialparamtabletext(fcontent)
     # Read table of params
     runnum, fcontent[idx + 3 .+ (1:43)]
 end
-getfinalparamtabletext(fcontent) = fcontent[end - 46 .+ (1:43)]
+getfinalparamtabletext(fcontent) = fcontent[end - (46+15) .+ (1:43)]
 
 for f in readdir(cluster_output_path, join=true)
     fname = splitpath(f)[end]
@@ -45,7 +45,7 @@ for f in readdir(cluster_output_path, join=true)
     fname_out = "$(fname)_$(runnum)"
     println("Reading file ", fname, " (run $runnum)")
     #@show getparamnamedtuple(initialptable)
-    #show getparamnamedtuple(finalptable)
+    #@show getparamnamedtuple(finalptable)
     # Add initial params to list
     initialpntuple = getparamnamedtuple(initialptable)
     initial_p = Params(; initialpntuple...,
