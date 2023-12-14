@@ -1,4 +1,4 @@
-use_GLMakie = false
+use_GLMakie = false;
 # Load the model functions
 (!isdefined(Main, :prob) || resetup) && include("../Nd_model/model_setup.jl")
 

@@ -25,7 +25,7 @@ lastcommit = "single" # misnomer to call this lastcommit but simpler
 archive_path = joinpath(allsingleruns_path, "run$run_num")
 mkpath(archive_path)
 reload = false # prevents loading other runs
-use_GLMakie = true # Set to true for interactive mode if plotting with Makie later
+use_GLMakie = false # Set to true for interactive mode if plotting with Makie later
 
 
 # Chose your parameter values here. Optimized parameters
@@ -35,7 +35,7 @@ use_GLMakie = true # Set to true for interactive mode if plotting with Makie lat
 p = Params(
     α_a =                  5.51344, # 6.79
     α_c =                 -12.1612per10000, # -12.7per10000
-    α_GRL =                 1.6257,# 1.57
+    α_GRL =                 1.57,# 1.57
     σ_ε =                 0.311346per10000, # 0.379per10000
     c_river =              509.224pM, # 376.0pM
     c_gw =                 113.722pM, # 109.0pM
@@ -76,7 +76,10 @@ p = Params(
     K_dust =              0.000119/(g/m^3), # 1.7/(g/m^3)
     f_dust =             0.0659166, # 0.0861
     w₀_dust =                  1.0km/yr, # 1.0km/yr
-)
+    K_Th =                      0.05,
+    f_Th =             0.05, # 0.0861
+    w₀_Th =                  1.0km/yr # 1.0km/yr
+    )
 
 tp_opt = AIBECS.table(p)# table of parameters
 # "opt" is a misnomer but it is simpler for plotting scripts
@@ -112,5 +115,5 @@ DNdmodel = uconvert.(uDNd, DNd * upreferred(uDNd))
 # to check how much Nd each scavenging particle type removes
 println("Scavenging removal:")
 for t in instances(ScavenginParticle)
-    println("- $(string(t)[2:end]): ", ∫dV(T_D(t, p) * 1/s * DNd * mol/m^3, grd) |> Mmol/yr)
+    println("- $(string(t)[2:end]): ", ∫dV(T_D(t, p) * 1/s * DNd[:] * mol/m^3, grd) |> Mmol/yr)
 end

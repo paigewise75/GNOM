@@ -52,6 +52,7 @@ else
         allarchives_path = joinpath(output_path, "archive")
         # if ARGS is provided it should contain the commit's first 8 characters
         lastcommit = get(ARGS, 1, splitpath(first(sort(map(f -> (joinpath(allarchives_path, f), Dates.unix2datetime(mtime(f))), filter(isdir, readdir(allarchives_path, join=true))), by=last, rev=true))[1])[end])
+        # lastcommit = "036aae4c"
         @show lastcommit
         archive_path = joinpath(output_path, "archive", lastcommit)
         archive_path, lastcommit
@@ -62,6 +63,7 @@ else
     # Remake optimized parameters (note the parameters must exist in the current commit otherwise you're in trouble)
     p = Params(; zip(tp_opt.Symbol,tp_opt.Value)...)
 end
+
 
 
 
@@ -92,5 +94,5 @@ Nd_transects = uconvert(uDNd, GEOTRACES.transects("Nd") * ρSW)
 #landlon, landlat, landdata = GeoDatasets.landseamask(;resolution='l', grid=5)
 #segments = GeoDatasets.gshhg('c', [1,6])
 
-reload = false
+reload = true
 

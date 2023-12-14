@@ -1,6 +1,6 @@
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.9.3"
+julia_version = "1.9.0"
 manifest_format = "2.0"
 project_hash = "aefee4cea29ce9933272311eb406e23376486bc1"
 
@@ -69,9 +69,9 @@ version = "0.2.0"
 
 [[deps.ArrayInterface]]
 deps = ["Adapt", "LinearAlgebra", "Requires", "SparseArrays", "SuiteSparse"]
-git-tree-sha1 = "eba0af42241f0cb648806604222bab1e064edb67"
+git-tree-sha1 = "f83ec24f76d4c8f525099b2ac475fc098138ec31"
 uuid = "4fba245c-0d91-5ea0-9b3e-6abc04ee57a9"
-version = "7.5.0"
+version = "7.4.11"
 
     [deps.ArrayInterface.extensions]
     ArrayInterfaceBandedMatricesExt = "BandedMatrices"
@@ -213,9 +213,9 @@ weakdeps = ["InverseFunctions"]
 
 [[deps.Clustering]]
 deps = ["Distances", "LinearAlgebra", "NearestNeighbors", "Printf", "Random", "SparseArrays", "Statistics", "StatsBase"]
-git-tree-sha1 = "05f9816a77231b07e634ab8715ba50e5249d6f76"
+git-tree-sha1 = "7ebbd653f74504447f1c33b91cd706a69a1b189f"
 uuid = "aaaa29a8-35af-508c-8bc3-b662a17a0fe5"
-version = "0.15.5"
+version = "0.14.4"
 
 [[deps.CodecZlib]]
 deps = ["TranscodingStreams", "Zlib_jll"]
@@ -231,9 +231,9 @@ version = "0.4.0"
 
 [[deps.ColorSchemeTools]]
 deps = ["Clustering", "ColorSchemes", "Colors", "FileIO", "ImageMagick", "Images", "Interpolations", "QuartzImageIO"]
-git-tree-sha1 = "6a7561aebf0cafc1eafb4af986d15fd33e75da10"
+git-tree-sha1 = "37749f13f96c7045035504b4acfeda222d3de6c3"
 uuid = "d3e213a1-5e82-5c18-bb32-2a58a99f8c46"
-version = "1.5.0"
+version = "1.4.0"
 
 [[deps.ColorSchemes]]
 deps = ["ColorTypes", "ColorVectorSpace", "Colors", "FixedPointNumbers", "PrecompileTools", "Random"]
@@ -294,7 +294,7 @@ weakdeps = ["Dates", "LinearAlgebra"]
 [[deps.CompilerSupportLibraries_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "e66e0078-7015-5450-92f7-15fbd957f2ae"
-version = "1.0.5+0"
+version = "1.0.2+0"
 
 [[deps.ComputationalResources]]
 git-tree-sha1 = "52cb3ec90e8a8bea0e62e275ba577ad0f74821f7"
@@ -893,9 +893,9 @@ version = "0.3.7"
 
 [[deps.ImageSegmentation]]
 deps = ["Clustering", "DataStructures", "Distances", "Graphs", "ImageCore", "ImageFiltering", "ImageMorphology", "LinearAlgebra", "MetaGraphs", "RegionTrees", "SimpleWeightedGraphs", "StaticArrays", "Statistics"]
-git-tree-sha1 = "44664eea5408828c03e5addb84fa4f916132fc26"
+git-tree-sha1 = "fb0b597b4928e29fed0597724cfbb5940974f8ca"
 uuid = "80713f31-8817-5129-9cf8-209ff8fb23e1"
-version = "1.8.1"
+version = "1.8.0"
 
 [[deps.ImageShow]]
 deps = ["Base64", "ColorSchemes", "FileIO", "ImageBase", "ImageCore", "OffsetArrays", "StackViews"]
@@ -1572,7 +1572,7 @@ version = "0.42.2+0"
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "FileWatching", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
 uuid = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
-version = "1.9.2"
+version = "1.9.0"
 
 [[deps.PkgVersion]]
 deps = ["Pkg"]
@@ -2438,7 +2438,7 @@ version = "0.15.1+0"
 [[deps.libblastrampoline_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "8e850b90-86db-534c-a0d3-1478176c7d93"
-version = "5.8.0+0"
+version = "5.7.0+0"
 
 [[deps.libfdk_aac_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]

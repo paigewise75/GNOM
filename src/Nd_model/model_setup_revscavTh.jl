@@ -1,3 +1,7 @@
+## Altered reversible scavenging section to mimic the John et al., 2020 nickel model revscavTh(A,b,do). 
+
+
+
 include("../common_setup.jl")
 
 # Extra packages required for Nd model only
@@ -17,49 +21,50 @@ const uεNd = per10000
 const uDNd = pM
 
 @initial_value @units @flattenable @limits @description struct Params{Tp} <: AbstractParameters{Tp}
-    α_a::Tp            |      1.0| NoUnits      | true  |  (0,20)  | "Curvature of Nd release enhancement parabola"
-    α_c::Tp            |    -10.0| per10000     | true  | (-20,0)  | "Center of Nd release enhancement parabola"
-    α_GRL::Tp          |      2.0| NoUnits      | true  |   (0,∞)  | "Greenland Nd release enhancement"
-    σ_ε::Tp            |      0.5| per10000     | true  |   (0,5)  | "Per-pixel variance (std) of εNd"
-    c_river::Tp        |    100.0| pM           | true  |   (0,∞)  | "River effective [Nd]"
-    c_gw::Tp           |    100.0| pM           | false |   (0,∞)  | "Surface groundwater effective [Nd]"
-    σ_hydro::Tp        |  1.0e-10| Mmol/yr      | true  |   (0,∞)  | "Hydrothermal source magnitude"
-    ε_hydro::Tp        |     10.0| per10000     | true  | (-10,15) | "Hydrothermal source εNd"
-    ϕ_0::Tp            |     0.0 | pmol/cm^2/yr | false |   (5,15) | "Sedimentary flux at surface"
-    ϕ_∞::Tp            |     0.0 | pmol/cm^2/yr | false | (15,35)  | "Sedimentary flux at infinite depth"
-    z_0::Tp            |   200.0 | m            | true  |   (0,∞)  | "Sedimentary flux depth attenuation"
-    ε_EAsia_dust::Tp   |     -8.0| per10000     | true  | (-12,-2) | "EAsia dust εNd"
-    ε_NEAf_dust::Tp    |    -12.0| per10000     | true  | (-15,-9) | "NEAf dust εNd"
-    ε_NWAf_dust::Tp    |    -12.0| per10000     | true  | (-15,-9) | "NWAf dust εNd"
-    ε_NAm_dust::Tp     |     -8.0| per10000     | true  | (-12,-4) | "NAm dust εNd"
-    ε_SAf_dust::Tp     |    -10.0| per10000     | true  | (-25,-6) | "SAf dust εNd"
-    ε_SAm_dust::Tp     |     -3.0| per10000     | true  | ( -7, 0) | "SAm dust εNd"
-    ε_MECA_dust::Tp    |     -2.0| per10000     | true  | ( -5, 3) | "MECA dust εNd"
-    ε_Aus_dust::Tp     |     -4.0| per10000     | true  | ( -7,-1) | "Aus dust εNd"
-    ε_Sahel_dust::Tp   |    -12.0| per10000     | true  | (-15,-9) | "Sahel dust εNd"
-    β_EAsia_dust::Tp   |      2.0| per100       | false |  (0,5)   | "EAsia dust Nd solubility"
-    β_NEAf_dust::Tp    |      2.0| per100       | false |  (0,5)   | "NEAf dust Nd solubility"
-    β_NWAf_dust::Tp    |      2.0| per100       | false |  (0,5)   | "NWAf dust Nd solubility"
-    β_NAm_dust::Tp     |      2.0| per100       | false |  (0,5)   | "NAm dust Nd solubility"
-    β_SAf_dust::Tp     |      2.0| per100       | false |  (0,5)   | "SAf dust Nd solubility"
-    β_SAm_dust::Tp     |      2.0| per100       | false |  (0,5)   | "SAm dust Nd solubility"
-    β_MECA_dust::Tp    |      2.0| per100       | false |  (0,5)   | "MECA dust Nd solubility"
-    β_Aus_dust::Tp     |      2.0| per100       | false |  (0,5)   | "Aus dust Nd solubility"
-    β_Sahel_dust::Tp   |      2.0| per100       | false |  (0,5)   | "Sahel dust Nd solubility"
-    ε_volc::Tp         |      5.4| per10000     | true  |(2.7,8.0) | "Volcanic ash εNd"
-    β_volc::Tp         |      2.0| per100       | true  |  (0,5)   | "Volcanic ash Nd solubility"
-    K_prec::Tp         |    0.002| (mol/m^3)^-1 | true  |   (0,∞)  | "Precipitation reaction constant"
-    f_prec::Tp         |      0.4| NoUnits      | true  |   (0,1)  | "Fraction of non-buried precipitated Nd"
-    w₀_prec::Tp        |      0.7| km/yr        | false |   (0,∞)  | "Settling velocity of precipitated Nd"
-    K_POC::Tp          |      2.0| (mol/m^3)^-1 | true  |   (0,∞)  | "POC-scavenging reaction constant"
-    f_POC::Tp          |     0.78| NoUnits      | true  |   (0,1)  | "Fraction of non-buried POC-scavenged Nd"
-    w₀_POC::Tp         |     40.0| m/d          | false |   (0,∞)  | "Settling velocity of POC-scavenged Nd"
-    K_bSi::Tp          |      1.0| (mol/m^3)^-1 | true  |   (0,∞)  | "bSi-scavenging reaction constant"
-    f_bSi::Tp          |      0.5| NoUnits      | true  |   (0,1)  | "Fraction of non-buried bSi-scavenged Nd"
-    w₀_bSi::Tp         |  714.069| m/d          | false |   (0,∞)  | "Settling velocity of bSi-scavenged Nd"
-    K_dust::Tp         |    0.001| (g/m^3)^-1   | true  |   (0,∞)  | "Dust-scavenging reaction constant"
-    f_dust::Tp         |    0.073| NoUnits      | true  |   (0,1)  | "Fraction of non-buried dust-scavenged Nd"
-    w₀_dust::Tp        |      1.0| km/yr        | false |   (0,∞)  | "Settling velocity of dust-scavenged Nd"
+    α_a::Tp            |  1.0   | NoUnits      | true  |  (0,20)  | "Curvature of Nd release enhancement parabola"
+    α_c::Tp            | -10.0  | per10000     | true  | (-20,0)  | "Center of Nd release enhancement parabola"
+    α_GRL::Tp          |  2.0   | NoUnits      | true  |   (0,∞)  | "Greenland Nd release enhancement"
+    σ_ε::Tp            |  0.5   | per10000     | true  |   (0,5)  | "Per-pixel variance (std) of εNd"
+    c_river::Tp        | 100.0  | pM           | true  |   (0,∞)  | "River effective [Nd]"
+    c_gw::Tp           | 100.0  | pM           | true  |   (0,∞)  | "Surface groundwater effective [Nd]"
+    σ_hydro::Tp        |  1e-10 | Mmol/yr      | true  |   (0,∞)  | "Hydrothermal source magnitude"
+    ε_hydro::Tp        |  10.0  | per10000     | true  | (-10,15) | "Hydrothermal source εNd"
+    ϕ_0::Tp            |  20.0  | pmol/cm^2/yr | true  |   (0,∞)  | "Sedimentary flux at surface"
+    ϕ_∞::Tp            |  10.0  | pmol/cm^2/yr | true  |   (0,∞)  | "Sedimentary flux at infinite depth"
+    z_0::Tp            | 200.0  | m            | true  |   (0,∞)  | "Sedimentary flux depth attenuation"
+    ε_EAsia_dust::Tp   |  -8.0  | per10000     | true  | (-12,-2) | "EAsia dust εNd"
+    ε_NEAf_dust::Tp    | -12.0  | per10000     | true  | (-15,-9) | "NEAf dust εNd"
+    ε_NWAf_dust::Tp    | -12.0  | per10000     | true  | (-15,-9) | "NWAf dust εNd"
+    ε_NAm_dust::Tp     |  -8.0  | per10000     | true  | (-12,-4) | "NAm dust εNd"
+    ε_SAf_dust::Tp     | -10.0  | per10000     | true  | (-25,-6) | "SAf dust εNd"
+    ε_SAm_dust::Tp     |  -3.0  | per10000     | true  | ( -7, 0) | "SAm dust εNd"
+    ε_MECA_dust::Tp    |  -2.0  | per10000     | true  | ( -5, 3) | "MECA dust εNd"
+    ε_Aus_dust::Tp     |  -4.0  | per10000     | true  | ( -7,-1) | "Aus dust εNd"
+    ε_Sahel_dust::Tp   | -12.0  | per10000     | true  | (-15,-9) | "Sahel dust εNd"
+    β_EAsia_dust::Tp   |    2.0 | per100       | true  |  (0,5)   | "EAsia dust Nd solubility"
+    β_NEAf_dust::Tp    |    2.0 | per100       | true  |  (0,5)   | "NEAf dust Nd solubility"
+    β_NWAf_dust::Tp    |    2.0 | per100       | true  |  (0,5)   | "NWAf dust Nd solubility"
+    β_NAm_dust::Tp     |    2.0 | per100       | true  |  (0,5)   | "NAm dust Nd solubility"
+    β_SAf_dust::Tp     |    2.0 | per100       | true  |  (0,5)   | "SAf dust Nd solubility"
+    β_SAm_dust::Tp     |    2.0 | per100       | true  |  (0,5)   | "SAm dust Nd solubility"
+    β_MECA_dust::Tp    |    2.0 | per100       | true  |  (0,5)   | "MECA dust Nd solubility"
+    β_Aus_dust::Tp     |    2.0 | per100       | true  |  (0,5)   | "Aus dust Nd solubility"
+    β_Sahel_dust::Tp   |    2.0 | per100       | true  |  (0,5)   | "Sahel dust Nd solubility"
+    ε_volc::Tp         |    5.4 | per10000     | true  |(2.7,8.0) | "Volcanic ash εNd"
+    β_volc::Tp         |    2.0 | per100       | true  |  (0,5)   | "Volcanic ash Nd solubility"
+    K_prec::Tp         | 2e-3   | (mol/m^3)^-1 | false |   (0,∞)  | "Precipitation reaction constant"
+    f_prec::Tp         | 0.4    | NoUnits      | false |   (0,1)  | "Fraction of non-buried precipitated Nd"
+    w₀_prec::Tp        | 0.7    | km/yr        | false |   (0,∞)  | "Settling velocity of precipitated Nd"
+    K_POC::Tp          | 2.0    | (mol/m^3)^-1 | false |   (0,∞)  | "POC-scavenging reaction constant"
+    f_POC::Tp          | 0.78   | NoUnits      | false |   (0,1)  | "Fraction of non-buried POC-scavenged Nd"
+    w₀_POC::Tp         | 40.0   | m/d          | false |   (0,∞)  | "Settling velocity of POC-scavenged Nd"
+    K_bSi::Tp          |  1.0   | (mol/m^3)^-1 | false |   (0,∞)  | "bSi-scavenging reaction constant"
+    f_bSi::Tp          |  0.5   | NoUnits      | false |   (0,1)  | "Fraction of non-buried bSi-scavenged Nd"
+    w₀_bSi::Tp         | 714.069| m/d          | false |   (0,∞)  | "Settling velocity of bSi-scavenged Nd"
+    K_dust::Tp         | 1e-3   | (g/m^3)^-1   | false |   (0,∞)  | "Dust-scavenging reaction constant"
+    f_dust::Tp         | 0.073  | NoUnits      | false |   (0,1)  | "Fraction of non-buried dust-scavenged Nd"
+    w₀_dust::Tp        | 1.0    | km/yr        | false |   (0,∞)  | "Settling velocity of dust-scavenged Nd"
+    Th_R::Tp           | 0.8    | km/yr        | true  |   (0,∞)  | "Affinity of scavenging of Nd to Th"
 end
 
 
@@ -76,16 +81,28 @@ R(ε) = R_CHUR * (ε + 1)
 #===============================================#
 # Transport operator (Circulation + Scavenging) #
 #===============================================#
-# Dissolved Cadmium (DNd) is transported by circulation and reversible scavenging
+# Dissolved Neodymium (DNd) is transported by circulation and reversible scavenging
 # Reversible scavenging is done by particles, for which we need concentration fields,
 # which are dust, POC, bSi, and "prec" (for homogeneous particle concentration)
-@enum ScavenginParticle _prec _dust _POC _bSi
+@enum ScavenginParticle _ESRTh _prec _dust _POC _bSi
 
 # Auxiliary function to normalize fields (such that ∫x⋅dV = 1)
 # E.g., this way, I can use σ_k as the total source in Gmol/yr
 # TODO: Check that I still need vnormalize!
 const volvec = ustrip.(vector_of_volumes(grd))
 vnormalize(x) = x ./ (volvec'x)
+
+
+
+
+
+
+
+
+
+
+
+
 
 # POC from Weber and John 2018 (from AWESOME OCIM)
 # MAT files are read with the MAT.jl package
@@ -94,19 +111,52 @@ vnormalize(x) = x ./ (volvec'x)
 # so that regridding is superfluous. But having regridding setup
 # will allow easy swap of the circulation!
 const AO_path = AO.download_and_unpack()
-const POC = let
-    ao = matread(joinpath(AO_path, "AWESOME-OCIM-master", "data", "ao.mat"))
-    AO_lat = vec(ao["ao"]["lat"])
-    AO_lon = vec(ao["ao"]["lon"])
-    AO_depth = vec(ao["ao"]["depth"])
-    AO_POC_3D = matread(joinpath(AO_path, "AWESOME-OCIM-master", "data", "WJ18", "POC_WJ18.mat"))["POC_WJ18"]
-    AO_POC_unit = mmol/m^3 # Make sure! (see https://github.com/MTEL-USC/AWESOME-OCIM/issues/11)
-    POC_3D = regrid(AO_POC_3D, AO_lat, AO_lon, AO_depth, grd) * AO_POC_unit
-    POC = vectorize(ustrip.(upreferred.(POC_3D)), grd) # converts to mol/m^3
-    #vnormalize(POC) # TODO: remove normalization?
-end
+ao = matread(joinpath(AO_path, "AWESOME-OCIM-master", "data", "ao.mat"))
+AO_lat = vec(ao["ao"]["lat"])
+AO_lon = vec(ao["ao"]["lon"])
+AO_depth = vec(ao["ao"]["depth"])
+AO_iocn = vec(ao["ao"]["iocn"])
+AO_vol = vec(ao["ao"]["Vol"])
+AO_height = vec(ao["ao"]["Height"])
+AO_EQNPOS = (ao["ao"]["EQNPOS"])
+AO_nocn = (ao["ao"]["nocn"])
+
+# This path is in PW SSH directory because the ESRTh.mat file is not availabile in the AIBECS.AO pkg. ESRTh is the 
+# Th field regridded for OCIM2. 
+esrth = matread("AWESOME-OCIM/srcsnk/ESRTh.mat")
+ESRTh = esrth["ESRTh"]
+
+# # Manually input R; This is the Th -> Nd scaling factor. Eventually turn into a tunable parameter
+Th_R = 0.8
+
+# get the Th effectove sinking rate from each grid cell
+AO_iocn_rounded = round.(Int, AO_iocn)
+ESRTh = ESRTh[AO_iocn_rounded]
+
+# # % the amount of element E which sinks out depends on the equilibrium
+# # % scavenging constant, multiplied by the POC concentration, times the
+# # % sinking rate divided by the height of the grid cell
+# sinkout = Th_R*(ESRTh./AO_height)
+
+# # Assuming AO_EQNPOS is a 1D vector representing a flattened 3D array
+# EQNPOSBELOW = cat(AO_EQNPOS[:,:,2:24],zeros(91,180,1); dims=3)
+
+# # Define the equation positions that particles are sinking from, as well as the volumes and heights of those grid cells
+# frompos = AO_EQNPOS[EQNPOSBELOW .!=0]
+# fromvol = AO_vol[frompos]
+# fromheight = AO_height[frompos]
+
+# # % define the equation positions that particles are sinking to, as well as
+# # % the volumes and heights of those grid cells
+# topos = EQNPOSBELOW[EQNPOSBELOW.!=0];
+# tovol = ao.Vol[topos];
+
+# sinkoutA = spdiagm(0 => sinkout)
+# sinkin = sinkout[frompos] .* (fromvol ./ tovol)
+# sinkinA = sparse(topos, frompos, sinkin, AO_nocn, AO_nocn)
+
 # Dust from Chien et al available from AIBECS
-const DustNd = 0.0mg/kg
+const DustNd = 27.0mg/kg
 const AEOL_Chienetal = let
     s_A_2D = AeolianSources.load("Chien")
     tmp = Any[]
@@ -144,83 +194,18 @@ const AEOL_Koketal = let
     end
     Dict(tmp)
 end
-# For scavenging by dust particles, we reuse the Kok et al data (from all regions)
-const ϕ_dustg = let # Repeat the dust field throughout the water column
-    s_A_2D = AeolianSources.load("Kok")
-    # Sum over all regions
-    ϕ_2D = sum(s_A_2D[r] for r in AeolianSources.Kok_REGIONS_NAMES)
-    # reshape
-    ϕ_2D = permutedims(ϕ_2D, (2,1))
-    # Regrid to OCIM2 grid
-    ϕ_2D_regridded = regrid(ϕ_2D, s_A_2D[:lat], s_A_2D[:lon], grd)
-    # Repeat flux over each layer
-    ϕ_3D = (ϕ_2D_regridded * kg/m^2/yr) .* ones(1, 1, size(grd)[3])
-    ϕ = vectorize(ϕ_3D, grd)
-end
-# Assuming w₀_dust = 1km/yr too and is not optimized,
-const dustparticles = ustrip.(g/m^3, ϕ_dustg / (1km/yr))
 
-# Opal (bSi) from side Si-cycle model
-const bSi = let
-    Si_model_file = if false # use local output file if you want to update the Si-cycle model
-        # Note: The Si model optimization must have been run before for this data to be used!
-        joinpath(output_path, "optimized_Simodel_$circname.jld2")
-    else # otherwise, download Si-model GNOM v1 output
-        register(DataDep(
-            "GNOM_Si_model",
-            "Si-cycle model output. See Pasquier, Hines, et al. (2021)",
-            "https://ndownloader.figshare.com/files/30725783",
-            "eef6a0c288422ffeefd78f870d8812519acda7dc6b719f3d08ca0dc0ae4a92bc"
-        ))
-        joinpath(datadep"GNOM_Si_model", "optimized_Simodel_$circname.jld2")
-    end
-    # Then open JLD2 file and load the particulate Si variable, PSi
-    jldopen(Si_model_file) do file
-        file["PSi"] # mol/m^3
-    end
-end
-# Instead of simply building the matrices with tranposrtoperator, to speed things up, these are constant
-# vectors of the values that go into the matrices. This is much more complicated now, but it is much faster, too
-# so better for optimization...
-# sparsitty pattern of scavenging transport operators
-const iscav, jscav, _ = findnz(buildIabove(grd) + I)
-const v_scav_noremin_dict, v_scav_justremin_dict = let
-    ijscav = findall(!iszero, buildIabove(grd) + I)
-    δz = ustrip.(grd.δz_3D[iswet(grd)])
-    Iabove = AIBECS.buildIabove(grd.wet3D, findall(vec(iswet(grd))))
-    w_base(z) = 1.0
-    T_w_noremin = transportoperator(grd, w_base; z_top=z_top, z_bot=z_bot, frac_seafloor=f_topo, Iabove=Iabove, δz=δz, fsedremin=false)
-    T_w_fullremin = transportoperator(grd, w_base; z_top=z_top, z_bot=z_bot, frac_seafloor=f_topo, Iabove=Iabove, δz=δz, fsedremin=true)
-    T_w_justremin = T_w_fullremin - T_w_noremin
-    diagonals = Dict(
-        _prec => I,
-        _dust => Diagonal(dustparticles),
-        _POC => Diagonal(POC),
-        _bSi => Diagonal(bSi)
-    )
-    v_scav_noremin = Dict((t, collect((T_w_noremin * diagonals[t])[ijscav])) for t in instances(ScavenginParticle))
-    v_scav_justremin = Dict((t, collect((T_w_justremin * diagonals[t])[ijscav])) for t in instances(ScavenginParticle))
-    # Check that the transport operators are correct
-    for t in instances(ScavenginParticle)
-        (K, w₀, f) = rand(3)
-        (K * w₀ * (v_scav_noremin[t] + f * v_scav_justremin[t]) ≈ collect((transportoperator(grd, z -> w₀ ; z_top=z_top, z_bot=z_bot, frac_seafloor=f_topo, fsedremin=f) * K * diagonals[t])[ijscav])) || error("Nah not good for $t")
-    end
-    v_scav_noremin, v_scav_justremin
-end
-Kwf(t, p) = AIBECS.UnPack.unpack(p, Val(Symbol(:K, t))),
-             AIBECS.UnPack.unpack(p, Val(Symbol(:w₀, t))),
-             AIBECS.UnPack.unpack(p, Val(Symbol(:f, t)))
-function v_scav(t, p)
-    K, w₀, f = Kwf(t, p)
-    K .* w₀ .* (v_scav_noremin_dict[t] .+ f .* v_scav_justremin_dict[t])
-end
+T_d = Th_R.*ESRTh
+
 # Using LinearOperators
-const colptrT0, rowvalsT0 = let
-    T0 = buildIabove(grd) + I
-    SparseArrays.getcolptr(T0), rowvals(T0)
-end
-T_D(t, p) = SparseMatrixCSC(nb, nb, colptrT0, rowvalsT0, v_scav(t, p))
-T_D(p) = LinearOperators((T, T_D(_prec, p), T_D(_dust, p), T_D(_POC, p), T_D(_bSi, p)))
+# const colptrT0, rowvalsT0 = let
+#     T0 = buildIabove(grd) + I
+#     SparseArrays.getcolptr(T0), rowvals(T0)
+# end
+
+# For some reason v_scav and colptrT0 and rowvalsT0 are incompatible 
+# T_D = SparseMatrixCSC(nb, nb, colptrT0, rowvalsT0, vec(v_scav))
+# T_D(p) = LinearOperators((T, T_D(_prec, p), T_D(_dust, p), T_D(_POC, p), T_D(_bSi, p), T_D(_ESRTh,p)))
 
 #=========================#
 # Local sources and sinks #
@@ -440,7 +425,7 @@ p = Params()
 x = ustrip.(mol/m^3, 10pM) * ones(nb)
 x = [x; x]
 # state function and its Jacobian
-F = AIBECSFunction(T_D, Gs, nb, Params)
+F = AIBECSFunction(T_d, Gs, nb, Params)
 # problem
 prob = SteadyStateProblem(F, x, p)
 

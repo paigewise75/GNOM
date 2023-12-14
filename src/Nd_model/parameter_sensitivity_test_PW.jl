@@ -5,34 +5,37 @@
 # so that you rerunning this file will not repeat the entire model setup
 !isdefined(Main, :F) && include("model_setup.jl")
 
-# This should create a new run name every time you run the file
-# And add an empty runXXX file to the single_runs folder
-
 allsingleruns_path = joinpath(output_path, "single_runs")
 mkpath(output_path)
 mkpath(allsingleruns_path)
+
+# This should create a new run name every time you run the file
+# And add an empty runXXX file to the single_runs folder
+sensitivity_path = joinpath(allsingleruns_path, "$p_i")
+mkpath(sensitivity_path)
+
 # Check previous runs and get new run number
 run_num = let
-    previous_run_nums = [parse(Int, match(r"run(\d+)", f).captures[1]) for f in readdir(allsingleruns_path) if (contains(f, "run") && isdir(joinpath(allsingleruns_path, f)))]
-    run_num = 1
-    while run_num ∈ previous_run_nums
-        run_num += 1
-    end
-    run_num
+    previous_run_nums = [parse(Int, match(r"run(\d+)", f).captures[1]) for f in readdir(sensitivity_path) if (contains(f, "run") && isdir(joinpath(sensitivity_path, f)))]
+        run_num = 1
+        while run_num ∈ previous_run_nums
+            run_num += 1
+        end
+        run_num
 end
-@info "This is run $run_num"
+@info "This is run $run_num changing $(p_i)"
 lastcommit = "single" # misnomer to call this lastcommit but simpler
-archive_path = joinpath(allsingleruns_path, "run$run_num")
-mkpath(archive_path)
+sensitivity_path = joinpath(sensitivity_path,"run$run_num")
+mkpath(sensitivity_path)
+
+
 reload = false # prevents loading other runs
-use_GLMakie = true # Set to true for interactive mode if plotting with Makie later
+use_GLMakie = false # Set to true for interactive mode if plotting with Makie later
 
 
-# Chose your parameter values here. Optimized parameters
-# — as published in Pasquier, Hines, et al. (2021) —
-# are shown in comment (leave them there
-# if you want to refer back to them)
-p = Params(
+# Chose your "base" parameter values here.
+# Note that here I am not using the `Params` function, but a simple "Tuple"
+p0 = (
     α_a =                  5.51344, # 6.79
     α_c =                 -12.1612per10000, # -12.7per10000
     α_GRL =                 1.6257,# 1.57
@@ -78,12 +81,17 @@ p = Params(
     w₀_dust =                  1.0km/yr, # 1.0km/yr
 )
 
-tp_opt = AIBECS.table(p)# table of parameters
+
+
+println("\nMultiplying $p_i by $mag")
+p = Params(; p0..., p_i => mag * getfield(p0, p_i))
+        
+tp_opt = AIBECS.table(p) # table of parameters
 # "opt" is a misnomer but it is simpler for plotting scripts
 
 # Save model parameters table and headcommit for safekeeping
-jldsave(joinpath(archive_path, "model$(headcommit)_single_run$(run_num)_$(circname).jld2"); headcommit, tp_opt)
-write(joinpath(archive_path, "model$(headcommit)_single_run$(run_num)_$(circname).md"), string(tp_opt))
+jldsave(joinpath(sensitivity_path, "model$(headcommit)_single_run$(run_num)_$(p_i).jld2"); headcommit, tp_opt)
+write(joinpath(sensitivity_path, "model$(headcommit)_single_run$(run_num)_$(p_i).md"), string(tp_opt))
 
 # Set the problem with the parameters above
 prob = SteadyStateProblem(F, x, p)
@@ -94,23 +102,7 @@ sol = solve(prob, CTKAlg(), preprint="Nd & εNd solve ", τstop=ustrip(s, 1e3Myr
 # unpack nominal isotopes
 DNd, DRNd = unpack_tracers(sol, grd)
 DNdmodel = uconvert.(uDNd, DNd * upreferred(uDNd))
-
 # compute εNd
 εNd = ε.(DRNd ./ DNd)
 εNdmodel = uconvert.(uεNd, εNd * upreferred(uεNd))
 
-# For plotting, you can either
-# follow the plotting scripts from the GNOM repository and use Makie
-# or use Plots.jl (not a dependency of GNOM)
-# I would recommend installing Plots.jl in your default environment anyway,
-# so that it can be called even from inside the GNOM environment.
-# You can then use the Plots.jl recipes exported by AIBECS, e.g.,
-#
-# julia> plotzonalaverage(εNd .|> per10000, grd, mask=ATL)
-
-# To help manually adjust parameters, below is a little loop
-# to check how much Nd each scavenging particle type removes
-println("Scavenging removal:")
-for t in instances(ScavenginParticle)
-    println("- $(string(t)[2:end]): ", ∫dV(T_D(t, p) * 1/s * DNd * mol/m^3, grd) |> Mmol/yr)
-end

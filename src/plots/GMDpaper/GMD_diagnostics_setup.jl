@@ -92,7 +92,61 @@ DNd_wtags = let
 end
 fDNd_wtags = NamedTuple(j => DNdⱼ ./ DNd .|> per100 for (j,DNdⱼ) in pairs(DNd_wtags))
 
-rediagnose = false
+
+function write_latex_table(df::DataFrame, filepath::AbstractString)
+    # Open the file for writing
+    open(filepath, "w") do file
+        # Write the LaTeX document preamble
+        write(file, "\\documentclass{article}\n")
+        write(file, "\\usepackage{rotating}\n")
+        write(file, "\\usepackage{siunitx}\n\n")
+        write(file, "\\begin{document}\n\n")
+
+        # Write the sidewaystable environment
+        write(file, "\\begin{sidewaystable}\n")
+        write(file, "  \\centering\n")
+
+        # Write the tabular environment with column specifications
+        write(file, "  \\begin{tabular}{rrSSSSSS}\n")
+        write(file, "    \\hline\n")
+
+        # Write table header
+        for (i, col) in enumerate(names(df))
+            write(file, "    \\textbf{", string(col), "}")
+            if i < ncol(df)
+                write(file, " & ")
+            else
+                write(file, " \\\\\n")
+            end
+        end
+
+        # Write the table content
+        for row in 1:nrow(df)
+            for (i, col) in enumerate(names(df))
+                val = df[row, col]
+                if i < ncol(df)
+                    write(file, "    ", string(val), " & ")
+                else
+                    write(file, "    ", string(val), " \\\\\n")
+                end
+            end
+        end
+
+        # Write the table footer
+        write(file, "    \\hline\n")
+        write(file, "  \\end{tabular}\n")
+
+        # Close the sidewaystable and document
+        write(file, "\\end{sidewaystable}\n")
+        write(file, "\\end{document}\n")
+    end
+end
+
+
+
+rediagnose = true
 
 println("└─> Done!")
+
+
 

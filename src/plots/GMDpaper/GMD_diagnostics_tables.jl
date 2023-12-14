@@ -33,5 +33,9 @@ let
 
     # Make a LaTeX table
     formatters = (v,i,j) -> (j ≥ 3) ? string("\$", (v ≥ 10 ? Int : identity)(parse(Float64, sprintf1("%.2g", v))), "\$") : v
-    @show pretty_table(df, backend = Val(:latex), formatters=formatters, nosubheader=true)
+    # @show pretty_table(df, backend = Val(:latex), formatters=formatters, nosubheader=true)
+    filepath = joinpath(archive_path,"run_num$(run_num)_sourcemagnitude.tex")
+    write_latex_table(df, filepath)
 end
+
+

@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #SBATCH --job-name=Ndopt
-#SBATCH --output=cluster_output/Ndopt%j.out
-#SBATCH --error=cluster_output/Ndopt%j.err
-#SBATCH --time=20:00:00
+#SBATCH --output=GNOM/cluster_output/Ndopt%j.out
+#SBATCH --error=GNOM/cluster_output/Ndopt%j.err
+#SBATCH --time=30:00:00
 #SBATCH --nodes=1
 #SBATCH --mem=64GB
 
