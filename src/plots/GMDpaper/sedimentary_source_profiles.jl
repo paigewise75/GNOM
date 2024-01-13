@@ -29,7 +29,7 @@ function sed_source_profiles!(fig)
     lines!(ax, v, z)
     Makie.ylims!(ax, (6000, -50))
     #xlims!(ax, (0, 1.05maximum(v)))
-    Makie.xlims!(ax, (0, maximum(ax.finallimits[])[1]))
+    # Makie.xlims!(ax, (0, maximum(ax.finallimits[])[1]))
     ax.yticks = 0:1000:6000
     ax.xlabel = "Base sed. flux, ϕ(z) ($(u))"
     ax.ylabel = "depth (m)"

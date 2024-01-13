@@ -26,13 +26,17 @@ mkpath(data_path)
 mkpath(archive_path)
 # Check previous runs and get new run number
 run_num = let
-    previous_run_nums = [parse(Int, match(r"run(\d+)", f).captures[1]) for f in readdir(archive_path) if contains(f, "run")]
+    # previous_run_nums = [parse(Int, match(r"run(\d+)", f).captures[1]) for f in readdir(archive_path) if contains(f, "run")]
+    previous_run_nums = [
+           parse(Int, match(r"run(\d+)", f).captures[1]) for f in readdir(archive_path) if match(r"run(\d+)", f) !== nothing
+       ]
     run_num = 1
     while run_num ∈ previous_run_nums
         run_num += 1
     end
     run_num
 end
+
 
 println("==========================================")
 println("This is run $run_num with starting Params:")

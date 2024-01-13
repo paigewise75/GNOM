@@ -10,7 +10,7 @@ fig = Figure(resolution=(1200, 900))
 isbasins = [isatlantic2, ispacific2, isantarctic]
 basins = ["ATL", "PAC", "SO"]
 basin_longnames = ["Atlantic", "Pacific", "Southern Ocean"]
-colors = ColorSchemes.colorschemes[:tableau_colorblind][[1,6,2,4]]
+colors = PlotUtils.cgrad([:blue, :red, :purple])
 model_thickness = 2.5
 obs_thickness = 1
 

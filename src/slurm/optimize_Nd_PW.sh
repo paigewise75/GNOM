@@ -18,4 +18,4 @@ module load julia/1.9.0
 cd /home1/pmwise/GNOM_Project/GNOM
 
 # Optimize it!
-julia --heap-size-hint=24G /home1/pmwise/GNOM_Project/GNOM/src/Nd_model/setup_and_optimization.jl
+julia --heap-size-hint=24G src/Nd_model/setup_and_optimization.jl
