@@ -53,7 +53,8 @@ output_path = joinpath(root_path, "output")
 data_path = joinpath(root_path, "data")
 # We use the head commit's 8 first characters to keep a record of which commit gave which output
 using LibGit2
-headcommit = "11df75c6"
+headcommit = string(LibGit2.GitHash(LibGit2.peel(LibGit2.GitCommit, LibGit2.head(GitRepo(root_path)))))[1:8]
+
 # headcommit = if isdir(".git")
 #     string(LibGit2.GitHash(LibGit2.peel(LibGit2.GitCommit, LibGit2.head(GitRepo(root_path)))))[1:8]
 # else

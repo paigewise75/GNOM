@@ -32,7 +32,7 @@ maptransects!(ax, cts, ts, tcol, wlon)
 Makie.xlims!(ax, clon .+ (-180,180))
 Makie.ylims!(ax, (-90,90))
 #mapit!(ax, clon, mypolys(clon), color=:transparent, strokecolor=:black)
-text!(ax, 0, 0, text=panellabels[1], textsize=20, align=(:left,:bottom), space=:relative, offset=(4,4), font=labelfont, color=labelcol)
+text!(ax, 0, 0, text=panellabels[1], fontsize=20, align=(:left,:bottom), space=:relative, offset=(4,4), font=labelfont, color=labelcol)
 hidedecorations!(ax)
 hidespines!(ax)
 # Legend

@@ -52,7 +52,11 @@ else
     archive_path, lastcommit = let
         allarchives_path = joinpath(output_path, "archive")
         # if ARGS is provided it should contain the commit's first 8 characters
-        lastcommit = get(ARGS, 1, splitpath(first(sort(map(f -> (joinpath(allarchives_path, f), Dates.unix2datetime(mtime(f))), filter(isdir, readdir(allarchives_path, join=true))), by=last, rev=true))[1])[end])
+        # lastcommit = get(ARGS, 1, splitpath(first(sort(map(f -> (joinpath(allarchives_path, f), Dates.unix2datetime(mtime(f))), filter(isdir, readdir(allarchives_path, join=true))), by=last, rev=true))[1])[end])
+        # lastcommit = "daec0095"
+        # lastcommit = "767c7e31"
+        lastcommit = "11df75c6"
+        # lastcommit = "036aae4c"
         @show lastcommit
         archive_path = joinpath(output_path, "archive", lastcommit)
         archive_path, lastcommit
