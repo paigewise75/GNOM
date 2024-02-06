@@ -5,7 +5,7 @@ include("optimization.jl")
 
 
 include("../plots/GMDpaper/jointPDF_Nd.jl")
-include("../plots/PaigePlots/profiles_v4.jl")
+include("../plots/GNOMv2/profiles_v4.jl")
 include("../plots/GMDpaper/GMD_diagnostics_tables.jl")
 include("../plots/GMDpaper/sedimentary_source_profiles.jl")
 include("../plots/GMDpaper/source_maps.jl")
