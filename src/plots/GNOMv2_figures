@@ -1,0 +1,32 @@
+use_GLMakie = false
+
+
+run_num = 1
+
+# include("../Nd_model/model_setup.jl")
+
+# Change param file!
+file_name = "optimized_output_767c7e31_run7_OCIM2.jld2" # Best Run
+# file_name = "optimized_output_11df75c6_run3_OCIM2.jld2" # No Dust
+# file_name = "optimized_output_11df75c6_run2_OCIM2.jld2" # No Rivers
+# file_name = "optimized_output_11df75c6_run1_OCIM2.jld2" # No Sed
+
+
+
+
+# archive_path = joinpath(output_path, "archive", "GNOMv2","Reactivity Parameter","Alpha = 1")
+# archive_path = joinpath(output_path, "archive", "GNOMv2","Omit Sources","No Sed")
+archive_path = joinpath(output_path, "archive", "GNOMv2","Best Run")
+
+file_path = joinpath(archive_path, file_name)
+
+
+# include("../plots/GMDpaper/jointPDF_Nd.jl")
+# include("../plots/GNOMv2/profiles_v4.jl")
+# include("../plots/GMDpaper/GMD_diagnostics_tables.jl")
+# include("../plots/GMDpaper/sedimentary_source_profiles.jl")
+# include("../plots/GMDpaper/source_maps.jl")
+# include("../plots/GNOMv2/sedimentary_source_profiles_v3.jl")
+# include("../plots/GNOMv2/individual_source_maps.jl")
+# include("../plots/GMDpaper/dust_regions_eNd.jl")
+# include("../plots/GNOMv2/sed_histograms.jl")

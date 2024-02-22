@@ -3,34 +3,60 @@
 include("../plots_setup_Nd.jl")
 
 function sed_histograms!(fig)
-    # zbot = sort(unique(bottomdepthvec(grd)))
-    # ztop = sort(unique(topdepthvec(grd)))
-    # yticks = vcat(0, zbot)
-    # y = reduce(vcat, [zt, zb] for (zt, zb) in zip(ztop, zbot))
     label_opts = (fontsize=20, align=(:left,:bottom), offset=(4,4), space=:relative, font=labelfont, color=:black)
 
-    # left panel is just ϕ(z)
+    # left panel = ϕ(z) vs εNd 
     ax = fig[1,1] = Axis(fig)
-    u = u"pmol/cm^2/yr"
+    u = u"pmol/yr"
+    upref = upreferred(u)/(100^2)u"m^2/cm^2"
+    b = f_topo.*(ustrip.(ϕ_bot(p))/(100^2)) #pmol/m^2/yr
+    v = f_topo.*(ustrip(vector_of_volumes(grd)./vectorize(grd.δz_3D, grd))) # m^2
+    f_bot = ustrip(b.*v) #pmol/m^2/yr * m^2 = pmol/yr
+
+    # f_bot = ustrip.(u, (f_topo.*ustrip.(u,ϕ_bot(p).* upref))./v)
+    r_εNd = round.(ustrip.(per10000, shifted_ε_sed(p)), digits = 2) # released Nd from sediments
+
+    j_0 = Float64[]
+    r_0 = Float64[]
+
+    for i in (round.(minimum(r_εNd),digits = 0)):1:(round.(maximum(r_εNd),digits = 0))
+       indices = findall(x -> x>i && x < (i+1), r_εNd)
+       j = sum(f_bot[indices])
+       push!(j_0,j)
+       push!(r_0,i)
+    end
+    barplot!(r_0, j_0, xlabel = "εNd Released from Sediment", ylabel = "Total Flux (pmol/yr)")
+    ax.ylabel = "Seafloor Sediment flux, ($(u))"
+    ax.xlabel = "Sediment Flux εNd"
+    ax.xticks = -40:5:20
+    # ax.yticks = minimum(j_0):1000:6000
+    text!(ax, 0, 0, text=panellabels[3]; label_opts...)
+
+    # right panel = sed area vs εNd
+    ax = fig[1,2] = Axis(fig)
+    u = u"m^2"
     upref = upreferred(u)
     r_εNd = round.(ustrip.(per10000, shifted_ε_sed(p)), digits = 2) # released Nd from sediments
-    f_bot = round.(ustrip.(u, ϕ_bot(p) .* upref), digits = 2)
+    a_sed = v
 
-    # Rearrange as a step function to match model source
-    # scatter!(ax,f_bot[1:100],r_εNd[1:100])
-    # Makie.ylims!(ax, ( 6000, -50))
-    #xlims!(ax, (0, 1.05maximum(v)))
-    # Makie.xlims!(ax, (0, maximum(ax.finallimits[])[1]))
-    
+    a_0 = Float64[]
+    r_0 = Float64[]
 
-
-    # ax.ylabel = "Seafloor Sediment flux, ($(u))"
-    # ax.xlabel = "Sediment Flux εNd"
-    # text!(ax, 0, 0, text=panellabels[3]; label_opts...)
+    for i in (round.(minimum(r_εNd),digits = 0)):1:(round.(maximum(r_εNd),digits = 0))
+       indices = findall(x -> x>i && x < (i+1), r_εNd)
+       a = sum(a_sed[indices])
+       push!(a_0,a)
+       push!(r_0,i)
+    end
+    barplot!(r_0, a_0, color="orange")
+    ax.ylabel = "Sediment Area ($(u))"
+    ax.xlabel = "Sediment Flux εNd"
+    ax.xticks = -40:5:20
+    text!(ax, 0, 0, text=panellabels[3]; label_opts...)
 end
 
 # Create the figure
-fig = Figure(resolution=(800,1000))
+fig = Figure(resolution=(1000,500))
 sed_histograms!(fig)
 
 if use_GLMakie

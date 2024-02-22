@@ -76,7 +76,7 @@ p = Params(
     K_dust =              0.000119/(g/m^3), # 1.7/(g/m^3)
     f_dust =             0.0659166, # 0.0861
     w₀_dust =                  1.0km/yr, # 1.0km/yr
-    Th_R =                      0.8
+    # Th_R =                      0.8
     )
 
 tp_opt = AIBECS.table(p)# table of parameters

@@ -67,7 +67,7 @@ for fun in (log10, identity)
         display(fig) # show the output wiht GLMakie
     else
         str = (fun == log10) ? "log_" : ""
-        save(joinpath(archive_path, "source_$(str)maps_$(lastcommit)_run$(run_num).pdf"), fig)
+        save(joinpath(archive_path, "source_$(str)maps_$(lastcommit)_run$(run_num).png"), fig)
         nothing # just so that no output is spat out
     end
 end

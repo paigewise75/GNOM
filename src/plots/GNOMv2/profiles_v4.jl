@@ -115,8 +115,8 @@ leg.tellheight = true
 if use_GLMakie
     display(fig) # show the output wiht GLMakie
 else
-    # save(joinpath(archive_path, "Test_Profile_v4.pdf"), fig)
-    save(joinpath(archive_path, "Nd_profiles_exploded_$(lastcommit)_run$(run_num)_v4.pdf"), fig)
+    # save(joinpath(archive_path, "Test_Profile_v4.png"), fig)
+    save(joinpath(archive_path, "Nd_profiles_exploded_$(lastcommit)_run$(run_num)_v4.png"), fig)
     nothing # just so that no output is spat out
 end
 

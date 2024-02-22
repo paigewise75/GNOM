@@ -51,7 +51,7 @@ mapit!(ax, cl0, mypolys(cl0), color=:transparent, strokecolor=RGBA(0,0,0,0.25), 
 mylatlons!(ax, latticks30, lonticks30)
 #tightlimits!(ax)
 
-cbar = fig[end+1, 1] = Colorbar(fig, colormap=εcmap, label="εNd (‱)", vertical=false, ticks=range(εclims..., step=5), flipaxis=false, ticklabelalign=(:center, :top))
+cbar = fig[end+1, 1] = Colorbar(fig, colormap=εcmap,label="εNd (‱)", vertical=false, flipaxis=false, ticks = -30:5:10)
 cbar.limits=εclims
 cbar.width = Relative(3/4)
 cbar.height = 30
@@ -62,7 +62,7 @@ cbar.tellheight = true
 if use_GLMakie
     display(fig) # show the output wiht GLMakie
 else
-    save(joinpath(archive_path, "εNd_dust_region_$(lastcommit)_run$(run_num).pdf"), fig)
+    save(joinpath(archive_path, "εNd_dust_region_$(lastcommit)_run$(run_num).png"), fig)
     nothing # just so that no output is spat out
 end
 

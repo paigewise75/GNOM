@@ -19,7 +19,7 @@ function αcurve(fig)
     ax.xticks = range(εclims..., step=5)
     ax.yticks = 0:1:maximum(αs)
     topscene = Scene(fig.scene)
-    Label(topscene, bbox = ax.scene.px_area, panellabels[1], textsize=20, halign=:left, valign=:bottom, padding=(10,0,5,0), font=labelfont, color=:black)
+    Label(topscene, bbox = ax.scene.px_area, panellabels[1], fontsize=20, halign=:left, valign=:bottom, padding=(10,0,5,0), font=labelfont, color=:black)
 end
 
 
@@ -52,7 +52,7 @@ function plot_alpha_map!(fig)
 
     # label
     topscene = Scene(fig.scene)
-    Label(topscene, bbox = ax.scene.px_area, panellabels[2], textsize=20, halign=:left, valign=:bottom, padding=(10,0,5,0), font=labelfont, color=:black)
+    Label(topscene, bbox = ax.scene.px_area, panellabels[2], fontsize=20, halign=:left, valign=:bottom, padding=(10,0,5,0), font=labelfont, color=:black)
     nothing
 end
 fig = Figure(resolution = (700, 1000), backgroundcolor=:white)
@@ -95,7 +95,7 @@ end
 
     # label
     topscene = Scene(fig.scene)
-    Label(topscene, bbox = ax.scene.px_area, panellabels[2], textsize=20, halign=:left, valign=:bottom, padding=(10,0,5,0), font=labelfont, color=:black)
+    Label(topscene, bbox = ax.scene.px_area, panellabels[2], fontsize=20, halign=:left, valign=:bottom, padding=(10,0,5,0), font=labelfont, color=:black)
     nothing
 #end
 fig = Figure(resolution = (700, 1000), backgroundcolor=:white)

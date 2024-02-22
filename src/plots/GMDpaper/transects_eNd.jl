@@ -83,6 +83,6 @@ trim!(fig.layout)
 if use_GLMakie
     display(fig) # show the output wiht GLMakie
 else
-    save(joinpath(archive_path, "eNd_transects_$(lastcommit)_run$(run_num).pdf"), fig)
+    save(joinpath(archive_path, "eNd_transects_$(lastcommit)_run$(run_num).png"), fig)
     nothing # just so that no output is spat out
 end

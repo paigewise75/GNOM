@@ -33,10 +33,10 @@ function sed_source_profiles!(fig)
     ax.yticks = 0:1000:6000
     ax.xlabel = "Base sed. flux, ϕ(z) ($(u))"
     ax.ylabel = "depth (m)"
-    text!(ax, 0, 0, text=panellabels[3]; label_opts...)
+    text!(ax, 0, 0, text=panellabels[2]; label_opts...)
 
     # panel for integrated source
-    ax = fig[2,2] = Axis(fig)
+    ax = fig[1,3] = Axis(fig)
     u∫dxdy = u"kmol/m/yr"
     ∫dxdy_s_sed = ∫dxdy(s_sed(p) * upreferred(uDNd) / s, grd) .|> u∫dxdy
     x = vcat(0, repeat(ustrip.(∫dxdy_s_sed), inner=2), 0)
@@ -48,7 +48,7 @@ function sed_source_profiles!(fig)
     ax.ylabel = "Depth (m)"
     ax.xlabel = "∫dxdy sed. source ($(u∫dxdy))"
     #hideydecorations!(ax, grid=false)
-    text!(ax, 0, 0, text=panellabels[4]; label_opts...)
+    text!(ax, 0, 0, text=panellabels[3]; label_opts...)
 
     # panel for alpha curve
     ax1 = fig[1,1] = Axis(fig)
@@ -63,17 +63,17 @@ function sed_source_profiles!(fig)
     text!(ax1, 0, 0, text=panellabels[1]; label_opts...)
 
 
-    # panel for shifted epsilon
-    ax = fig[2,1] = Axis(fig)
-    @unpack α_a, α_c, σ_ε = p
-    ε_eff = shifted_ε.(εs, σ_ε, α_a, α_c, ε10)
-    vlines!(ax, [ustrip.(p.α_c)], linestyle=:dash, color=:gray)
-    hlines!(ax, [0.0], color=:gray)
-    lines!(ax, ustrip.(per10000, εs), ustrip.(per10000, ε_eff - εs))
-    ax.xlabel = "In situ εNd (‱)"
-    ax.ylabel = "Released εNd − εNd (‱)"
-    Makie.xlims!(ax, εclims)
-    text!(ax, 0, 0, text=panellabels[2]; label_opts...)
+    # # panel for shifted epsilon
+    # ax = fig[2,1] = Axis(fig)
+    # @unpack α_a, α_c, σ_ε = p
+    # ε_eff = shifted_ε.(εs, σ_ε, α_a, α_c, ε10)
+    # vlines!(ax, [ustrip.(p.α_c)], linestyle=:dash, color=:gray)
+    # hlines!(ax, [0.0], color=:gray)
+    # lines!(ax, ustrip.(per10000, εs), ustrip.(per10000, ε_eff - εs))
+    # ax.xlabel = "In situ εNd (‱)"
+    # ax.ylabel = "Released εNd − εNd (‱)"
+    # Makie.xlims!(ax, εclims)
+    # text!(ax, 0, 0, text=panellabels[2]; label_opts...)
 
 
     # α map
@@ -81,7 +81,7 @@ function sed_source_profiles!(fig)
     innan = findall(.!isnan.(α2D))
     colorrange = extrema(α2D[innan]) .* (0,1)
     # ax = fig[3:4,:] = Axis(fig, backgroundcolor=:gray20, aspectratio=DataAspect())
-    ax = fig[3:4,:] = Axis(fig, backgroundcolor=:gray20)
+    ax = fig[2,1:3] = Axis(fig, backgroundcolor=:gray20)
     mapit!(ax, clon, mypolys(clon), color=:gray50)
     hm = Makie.heatmap!(ax, sclons, lats, view(α2D, ilon, :), colormap=αcmap; nan_color, colorrange)#, colorrange=αlims)
     mapit!(ax, clon, mypolys(clon), color=:transparent, strokecolor=:black, strokewidth=1)
@@ -94,20 +94,20 @@ function sed_source_profiles!(fig)
     cbar.tellheight = true
 
     # label
-    text!(ax, 0, 0, text=panellabels[5]; label_opts...)
+    text!(ax, 0, 0, text=panellabels[4]; label_opts...)
     #fontsize=20, halign=:left, valign=:bottom, padding=(10,0,5,0), font=labelfont, color=:black)
 
     nothing
 end
 
 # Create the figure
-fig = Figure(resolution=(800,1000))
+fig = Figure(resolution=(1000,900))
 sed_source_profiles!(fig)
 
 if use_GLMakie
     display(fig) # show the output wiht GLMakie
 else
-    save(joinpath(archive_path, "sedimentary_source_details_$(lastcommit)_run$(run_num).png"), fig)
+    save(joinpath(archive_path, "sedimentary_source_details_$(lastcommit)_run$(run_num)_v3.png"), fig)
     nothing # just so that no output is spat out
 end
 

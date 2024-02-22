@@ -28,7 +28,7 @@ maptransects!(ax, cts, ts, tcol, wlon)
 Makie.xlims!(ax, clon .+ (-180,180))
 Makie.ylims!(ax, (-90,90))
 #mapit!(ax, clon, mypolys(clon), color=:transparent)
-text!(ax, 0, 0, text=panellabels[1], textsize=20, align=(:left,:bottom), offset=(4,4), space=:relative, font=labelfont, color=labelcol)
+text!(ax, 0, 0, text=panellabels[1], fontsize=20, align=(:left,:bottom), offset=(4,4), space=:relative, font=labelfont, color=labelcol)
 hidedecorations!(ax)
 hidespines!(ax)
 # Legend
@@ -92,7 +92,7 @@ trim!(fig.layout)
 if use_GLMakie
     display(fig) # show the output wiht GLMakie
 else
-    save(joinpath(archive_path, "Nd_transects_mismatches_$(lastcommit)_run$(run_num).pdf"), fig)
+    save(joinpath(archive_path, "Nd_transects_mismatches_$(lastcommit)_run$(run_num).png"), fig)
     save(joinpath(archive_path, "Nd_transects_mismatches_$(lastcommit)_run$(run_num).png"), fig)
     nothing # just so that no output is spat out
 end

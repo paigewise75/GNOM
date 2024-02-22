@@ -7,8 +7,8 @@ surfacemask = horizontalslice(ones(count(iswet(grd))), grd, depth=0)
 function plot_εNd_sources!(fig, fun)
     islog = fun == log10
     u = islog ? u"mol/m^2/yr" : u"μmol/m^2/yr"
-    sources = [s_sed]
-    sources_iso =[s_sed_iso]
+    sources = [s_river] # change source here!
+    sources_iso =[s_river_iso] #change source here!
     hms = Vector{Any}(undef, 2)
     axs = Array{Any,2}(undef, (length(sources), 2))
     # all maps (Nd source and εNd of source)
@@ -67,7 +67,7 @@ for fun in (log10, identity)
         display(fig) # show the output wiht GLMakie
     else
         str = (fun == log10) ? "log_" : ""
-        save(joinpath(archive_path, "sediment_source_$(str)maps_$(lastcommit)_run$(run_num).pdf"), fig)
+        save(joinpath(archive_path, "$(keys(sources)[1])_source_$(str)maps_$(lastcommit)_run$(run_num).pdf"), fig)
         nothing # just so that no output is spat out
     end
 end
