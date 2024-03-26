@@ -7,8 +7,8 @@ surfacemask = horizontalslice(ones(count(iswet(grd))), grd, depth=0)
 function plot_εNd_sources!(fig, fun)
     islog = fun == log10
     u = islog ? u"mol/m^2/yr" : u"μmol/m^2/yr"
-    sources = [s_river] # change source here!
-    sources_iso =[s_river_iso] #change source here!
+    sources = [s_sed,s_dust] # change source here!
+    sources_iso =[s_sed_iso,s_dust_iso] #change source here!
     hms = Vector{Any}(undef, 2)
     axs = Array{Any,2}(undef, (length(sources), 2))
     # all maps (Nd source and εNd of source)

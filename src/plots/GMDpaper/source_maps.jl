@@ -7,8 +7,8 @@ surfacemask = horizontalslice(ones(count(iswet(grd))), grd, depth=0)
 function plot_εNd_sources!(fig, fun)
     islog = fun == log10
     u = islog ? u"mol/m^2/yr" : u"μmol/m^2/yr"
-    sources = [s_dust, s_volc, s_sed, s_river, s_gw, s_hydro]
-    sources_iso =[s_dust_iso, s_volc_iso, s_sed_iso, s_river_iso, s_gw_iso, s_hydro_iso]
+    sources = [s_dust, s_sed]
+    sources_iso =[s_dust_iso, s_sed_iso]
     hms = Vector{Any}(undef, 2)
     axs = Array{Any,2}(undef, (length(sources), 2))
     # all maps (Nd source and εNd of source)
@@ -59,7 +59,7 @@ function plot_εNd_sources!(fig, fun)
     nothing
 end
 
-for fun in (log10, identity)
+fun = log10
     local fig = Figure(resolution = (1500, 1800), backgroundcolor=:white)
     plot_εNd_sources!(fig, fun)
     trim!(fig.layout)
@@ -70,4 +70,4 @@ for fun in (log10, identity)
         save(joinpath(archive_path, "source_$(str)maps_$(lastcommit)_run$(run_num).png"), fig)
         nothing # just so that no output is spat out
     end
-end
+

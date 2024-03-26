@@ -1,0 +1,18 @@
+# FILEPATH: Untitled-1
+
+# Load required libraries
+library(ggplot2)
+library(dplyr)
+
+# Read the data from CSV file
+data <- read.csv("fe47ba4f_run28_Int.csv")
+
+# Group the data by ATL or PAC
+grouped_data <- data %>% 
+    group_by(ATL_PAC) 
+
+# Plot ATL and PAC against depth
+ggplot(grouped_data, aes(x = depth, y = ATL_PAC)) +
+    geom_point() +
+    labs(x = "Depth", y = "ATL and PAC") +
+    theme_minimal()

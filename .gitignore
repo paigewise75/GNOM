@@ -10,3 +10,4 @@ data/
 .vscode/settings.json
 
 src/plots/private/*
+.Rproj.user

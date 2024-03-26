@@ -1,4 +1,4 @@
-
+include("../model_setup.jl")
 # TODO separate this and put it into data_processing!
 using GEOTRACES
 using Statistics
@@ -195,7 +195,7 @@ const xDNdobs, xεNdobs = let
 
     println("Adding Du et al., 2020 LGM data...") 
     εNdobs4 = let
-        df = DataFrame(XLSX.readtable(joinpath("/home1/pmwise/.julia/datadeps/Du_etal_2020","1-s2.0-S0277379120303589-mmc1.xlsx"), "Holocene and LGM"))
+        df = DataFrame(XLSX.readtable(joinpath(data_path,"Du2020.xlsx"), "Holocene and LGM"))
         # Rename columns, convert to floats, clean depth data, filter nonsense, and attach units
         cleandepth(x::Number) = x
         function cleandepth(x::String)
@@ -206,13 +206,14 @@ const xDNdobs, xεNdobs = let
         println("  Processing \"$x\" as $out")
         return out
         end
+        default_value = -999.0
         εNdobs4 = let
         X = select(df,
-            Symbol("Latitude") => (x->Float64.(x)) => :lat,
-            Symbol("Longitude") => (x->Float64.(x)) => :lon,
-            Symbol("Depth_m") => (x->cleandepth.(x)) => :depth,
-            Symbol("epsilon_Nd_LGM") => (x->Float64.(x)) => :εNd,
-        )
+        Symbol("Latitude") => (x->Float64.(coalesce.(x, default_value))) => :lat,
+        Symbol("Longitude") => (x->Float64.(coalesce.(x, default_value))) => :lon,
+        Symbol("Depth_m") => (x->cleandepth.(x)) => :depth,
+        Symbol("epsilon_Nd_LGM") => (x->Float64.(coalesce.(x, default_value))) => :εNd,
+    )
         X = X[(-999 .< X.εNd) .& (-999 .< X.depth .< 6000) .& (-999 .< X.lon) .& (-999 .< X.lat), :]
         select(X, :lat, :lon=>(x->mod.(x,360))=>:lon, :depth=>(x->x*m)=>:depth, :εNd=>(x->x*per10000)=>:εNd)
         end

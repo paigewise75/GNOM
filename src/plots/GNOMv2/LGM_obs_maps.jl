@@ -1,5 +1,5 @@
 # include("../plots_setup_Nd.jl")
-# include("../../Nd_model/archive_experiments/LGM_obs.jl")
+include("../../Nd_model/archive_experiments/LGM_obs.jl")
 
 
 

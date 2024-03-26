@@ -6,7 +6,7 @@ run_num = 1
 # include("../Nd_model/model_setup.jl")
 
 # Change param file!
-file_name = "optimized_output_767c7e31_run7_OCIM2.jld2" # Best Run
+# file_name = "optimized_output_767c7e31_run7_OCIM2.jld2" # Best Run
 # file_name = "optimized_output_11df75c6_run3_OCIM2.jld2" # No Dust
 # file_name = "optimized_output_11df75c6_run2_OCIM2.jld2" # No Rivers
 # file_name = "optimized_output_11df75c6_run1_OCIM2.jld2" # No Sed
@@ -16,7 +16,7 @@ file_name = "optimized_output_767c7e31_run7_OCIM2.jld2" # Best Run
 
 # archive_path = joinpath(output_path, "archive", "GNOMv2","Reactivity Parameter","Alpha = 1")
 # archive_path = joinpath(output_path, "archive", "GNOMv2","Omit Sources","No Sed")
-archive_path = joinpath(output_path, "archive", "GNOMv2","Best Run")
+# archive_path = joinpath(output_path, "archive", "GNOMv2","Best Run")
 
 file_path = joinpath(archive_path, file_name)
 
