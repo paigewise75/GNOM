@@ -7,7 +7,7 @@
 #SBATCH --account=sethjohn_760
 #SBATCH --nodes=1
 #SBATCH --mem=64GB
-#SBATCH --partition=gpu
+#SBATCH --partition=main
 
 
 # Load the julia module
